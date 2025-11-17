@@ -27,4 +27,30 @@
     <button>Add Course</button>
     
 </body>
+ <script>
+    function validateForm() {
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (email.indexOf('@') === -1) 
+        {
+            alert("Email must contain @");
+            return false;
+        }
+
+        if (password !== confirmPassword) 
+        {
+            alert("Password and Confirm Password do not match");
+            return false;
+        }
+
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("displayName").innerText = fullName;
+        document.getElementById("displayEmail").innerText = email;
+        
+        return false;
+    }
+ </script>
 </html>
