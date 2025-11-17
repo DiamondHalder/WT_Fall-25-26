@@ -65,8 +65,20 @@
     function addCourse() {
         var courseName = document.getElementById("courseName").value;
         var listItem = document.createElement("li");
-        listItem.textContent = courseName;
+        listItem.textContent = courseName + " ";
         
+        // Create delete button
+        var deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = function() {
+            listItem.remove();
+            // Hide the list container if no courses remain
+            if (document.getElementById("courseList").children.length === 0) {
+                document.getElementById("courseListContainer").style.display = "none";
+            }
+        };
+        
+        listItem.appendChild(deleteBtn);
         document.getElementById("courseList").appendChild(listItem);
         document.getElementById("courseListContainer").style.display = "block";
         document.getElementById("courseName").value = "";
