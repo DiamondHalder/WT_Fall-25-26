@@ -62,7 +62,14 @@
 
     </style>
     <script>
-
+    function handleSubmit()
+    {
+        let name=document.getElementById("name").value.trim();
+        let email=document.getElementById("email").value.trim();
+        let number=document.getElementById("number").value.trim();
+        let pass=document.getElementById("password").value.trim();
+        let cpass=document.getElementById("cpassword").value.trim();
+    }
     </script>
     
 </html>
