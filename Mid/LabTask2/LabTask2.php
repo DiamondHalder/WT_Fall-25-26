@@ -49,6 +49,7 @@
             border-radius: 10px;
             width: 300px;
             margin: auto;
+            margin-bottom: 20px;
             box-shadow: inset;
         }
         #two {
@@ -62,7 +63,7 @@
 
     </style>
     <script>
-    function handleSubmit()
+    function handlesubmit()
     {
         let name=document.getElementById("name").value.trim();
         let email=document.getElementById("email").value.trim();
@@ -89,12 +90,13 @@
         }
 
         outputDiv.innerHTML=`
-        <b>Registration Successful</b>
+        <b>Registration Successful</b> <br>
         Name: ${name}<br>
         Email: ${email}<br>
         Phone: ${number}
 
         `; 
+        return false;
     }
     </script>
     
