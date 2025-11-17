@@ -5,6 +5,7 @@
             Registrarion</title>
     </head>
      <body>
+        <form id="one" onsubmit="return handlesubmit()">
         <h1 align="center">Participant Registration</h1>
         <div>
            Full Name: <br>
@@ -22,7 +23,9 @@
         </div>
         <div id="error"></div>
         <div id="output"></div>
-        
+
+        </form>
+        <form id="two">
         <div id="activity">
             Activity Name: <br>
             <input type="text" id="activity"> <br>
@@ -30,6 +33,7 @@
 
             <div id="activitylist"></div>
         </div>
+        </form>
 
 
      </body>
@@ -39,7 +43,26 @@
             padding: 30px;
             background-color:aqua ;
         }
-        
+        #one {
+            background-color:aliceblue;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: inset;
+        }
+        #two {
+            background-color:aliceblue;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: inset;
+        }
+
     </style>
+    <script>
+
+    </script>
     
 </html>
