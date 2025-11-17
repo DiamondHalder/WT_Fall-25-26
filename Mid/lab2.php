@@ -24,11 +24,17 @@
         Email: <span id="displayEmail"></span>
     </div>
     <center><h1>Course Registration</h1></center>
-    <form onsubmit="return courseList()">
+    <form onsubmit="return addCourse()">
         Course Name: <br>
         <input type="text" id="courseName" required> <br> <br>
         <button type="submit">Add Course </button>
     </form>
+    
+    <div id="courseListContainer" style="display:none;">
+        <br>
+        <h3>Added Courses:</h3>
+        <ul id="courseList"></ul>
+    </div>
     
 </body>
  <script>
@@ -54,6 +60,17 @@
         document.getElementById("displayName").innerText = fullName;
         document.getElementById("displayEmail").innerText = email;
         return false;
+    }
+
+    function addCourse() {
+        var courseName = document.getElementById("courseName").value;
+        var listItem = document.createElement("li");
+        listItem.textContent = courseName;
+        
+        document.getElementById("courseList").appendChild(listItem);
+        document.getElementById("courseListContainer").style.display = "block";
+        document.getElementById("courseName").value = "";
+        return false; 
     }
  </script>
 </html>
