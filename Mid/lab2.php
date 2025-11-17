@@ -24,7 +24,11 @@
         Email: <span id="displayEmail"></span>
     </div>
     <center><h1>Course Registration</h1></center>
-    <button>Add Course</button>
+    <form onsubmit="return courseList()">
+        Course Name: <br>
+        <input type="text" id="courseName" required> <br> <br>
+        <button type="submit">Add Course </button>
+    </form>
     
 </body>
  <script>
@@ -34,13 +38,13 @@
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
 
-        if (email.indexOf('@') === -1) 
+        if (email.indexOf('@')===-1) 
         {
             alert("Email must contain @");
             return false;
         }
 
-        if (password !== confirmPassword) 
+        if (password!==confirmPassword) 
         {
             alert("Password and Confirm Password do not match");
             return false;
@@ -49,7 +53,6 @@
         document.getElementById("successMsg").style.display = "block";
         document.getElementById("displayName").innerText = fullName;
         document.getElementById("displayEmail").innerText = email;
-        
         return false;
     }
  </script>
