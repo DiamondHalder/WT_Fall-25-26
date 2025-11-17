@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
- <title>Student Registration</title>
+ <title>Lab2odd</title>
 </head>
 <body>
     <center><h1>Student Registration</h1></center>
@@ -38,7 +38,8 @@
     
 </body>
  <script>
-    function validateForm() {
+    function validateForm() 
+    {
         var fullName = document.getElementById("fullName").value;
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
@@ -49,7 +50,6 @@
             alert("Email must contain @");
             return false;
         }
-
         if (password!==confirmPassword) 
         {
             alert("Password and Confirm Password do not match");
@@ -62,18 +62,18 @@
         return false;
     }
 
-    function addCourse() {
+    function addCourse() 
+    {
         var courseName = document.getElementById("courseName").value;
         var listItem = document.createElement("li");
         listItem.textContent = courseName + " ";
-        
-        // Create delete button
         var deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
-        deleteBtn.onclick = function() {
+        deleteBtn.onclick = function() 
+        {
             listItem.remove();
-            // Hide the list container if no courses remain
-            if (document.getElementById("courseList").children.length === 0) {
+            if (document.getElementById("courseList").children.length === 0) 
+            {
                 document.getElementById("courseListContainer").style.display = "none";
             }
         };
