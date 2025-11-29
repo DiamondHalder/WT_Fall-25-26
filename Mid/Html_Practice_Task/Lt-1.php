@@ -8,7 +8,7 @@
         <h1>Diamond Halder</h1>
         <nav>
             <ul>
-                <li><a href="#bio" >Biography</a></li>
+                <li><a href="#bio" id="biography">Biography</a></li>
                 <li><a href="#" id="educationb">Education</a></li>
                 <li><a href="#" id="contactbtn">Contact</a></li>
             </ul>
@@ -27,7 +27,7 @@
 
         <section id="education">
             <h2 align='center'>Education</h2>
-            <table>
+            <table align='center'>
                 <tr>
                     <th>Degree</th>
                     <th>Institution</th>
@@ -155,16 +155,26 @@
         }
         #education{
             display: none;
+            position: absolute; 
+            top:150px;  
+            left:25%;
+            margin: 0 auto;
+    
+            background-color: white;
+            padding: 20px;
+            
+            z-index: 1000;
+            text-align: center; 
         }
         #education table {
-            margin: 0 auto; 
+            
             border-collapse: collapse;
         }
 
         #education th, #education td {
              border: 1px solid black;
              padding: 10px;
-             text-align: center;
+             
         }
 
         footer{
@@ -189,12 +199,18 @@
                 educationSection.scrollIntoView({ behavior:"smooth"});
        });
 
+       biography.addEventListener('click',function(e){
+                e.preventDefault();
+                educationSection.style.display="none";
+                bioSection.style.display="block";
+       });
 
 
-        const contactbtn = document.getElementById('contactbtn');
-        const contactpopup = document.getElementById('contactpopup');
-        const overlay = document.getElementById('overlay');
-        const closebtn = document.querySelector('#contactpopup .close');
+
+        let contactbtn = document.getElementById('contactbtn');
+        let contactpopup = document.getElementById('contactpopup');
+        let overlay = document.getElementById('overlay');
+        let closebtn = document.querySelector('#contactpopup .close');
 
 
         contactbtn.addEventListener('click', function(e)
