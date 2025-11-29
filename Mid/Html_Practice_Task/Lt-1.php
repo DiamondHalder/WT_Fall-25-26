@@ -53,5 +53,20 @@
             </table>
 
         </section>
+
+        <section id="contact">
+            <h3>Contact Me</h2>
+            <form action="#" method="post">
+                Email:
+                <input type="email" id="email" name="email">
+                Message:
+                <textarea name="message" id="message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+
+        </section>
+        <footer>
+            <P>&copy; 2025 Diamond Halder. All Rights Reserved</P>
+        </footer>
     </main>
 </body>
