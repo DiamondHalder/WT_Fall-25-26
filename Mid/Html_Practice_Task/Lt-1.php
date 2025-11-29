@@ -8,8 +8,8 @@
         <h1>Diamond Halder</h1>
         <nav>
             <ul>
-                <li><a href="#bio">Biography</a></li>
-                <li><a href="education.html" target="_blank">Education</a></li>
+                <li><a href="#bio" >Biography</a></li>
+                <li><a href="#" id="educationb">Education</a></li>
                 <li><a href="#" id="contactbtn">Contact</a></li>
             </ul>
         </nav>
@@ -26,7 +26,7 @@
     </main>    
 
         <section id="education">
-            <h2>Education</h2>
+            <h2 align='center'>Education</h2>
             <table>
                 <tr>
                     <th>Degree</th>
@@ -71,12 +71,23 @@
             </form>
             <button class="close">Close</button>
         </div>
-        <footer>
+        <footer >
             <P>&copy; 2025 Diamond Halder. All Rights Reserved</P>
         </footer>
    
 
     <style>
+
+        html, body{
+            height:100% ;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+
+        }
         header{
             position: fixed;
             top: 0;
@@ -108,6 +119,7 @@
         main{
             margin-top: 120px;
             text-align: center;
+            flex:1;
         }
         
         
@@ -142,14 +154,43 @@
             z-index: 1000;
         }
         #education{
-            border:2px solid black;
-            
-
+            display: none;
         }
+        #education table {
+            margin: 0 auto; 
+            border-collapse: collapse;
+        }
+
+        #education th, #education td {
+             border: 1px solid black;
+             padding: 10px;
+             text-align: center;
+        }
+
+        footer{
+            text-align: center;
+        }
+
+        
     </style>
 
     <script>
        
+       let educationb = document.getElementById('educationb');
+       let educationSection= document.getElementById('education');
+       let bioSection= document.getElementById('bio');
+
+       educationb.addEventListener('click', function(e){
+                e.preventDefault();
+
+                bioSection.style.display="none";
+
+                educationSection.style.display="block";
+                educationSection.scrollIntoView({ behavior:"smooth"});
+       });
+
+
+
         const contactbtn = document.getElementById('contactbtn');
         const contactpopup = document.getElementById('contactpopup');
         const overlay = document.getElementById('overlay');
