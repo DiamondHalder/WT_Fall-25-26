@@ -1,5 +1,5 @@
 <?php
-$number = array(80, 40, 60);
+$number = array(80, 40, 60,30,15 );
 
 $highest= $number[0];
 
