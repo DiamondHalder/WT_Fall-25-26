@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Admin Dashboard</title>
+        <link rel="icon" type="image/jpeg" href="../assets/images/logo.png">
         <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
