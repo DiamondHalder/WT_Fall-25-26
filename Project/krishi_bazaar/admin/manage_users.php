@@ -24,8 +24,29 @@
                 <h2>Manage Users</h2><br>
 
                 <?php
-                
+                    if($_SERVER["REQUEST_METHOD"]=="POST"){
+                        if(isset($_POST["block"])){
+                            $user_id = $_POST["user_id"];
+                            echo "<p style='color:red;'>User Id $user_id had been blocked (UI only).</p>";
+                        }
+
+                        if(isset($_POST["unblock"])){
+                            $user_id = $_POST["user_id"];
+                            echo "<p style='color:green;'>User Id $user_id had been unblocked (UI only).</p>";
+                        }
+
+                        if(isset($_POST["delete"])){
+                            $user_id = $_POST["user_id"];
+                            echo "<p style='color:red;'>User Id $user_id had been deleted (UI only).</p>";
+                        }
+                    }
                 ?>
+
+                <table>
+                    <tr>
+                        <th>User ID</th>
+                    </tr>
+                </table>
 
             </div>
         </div>
