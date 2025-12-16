@@ -84,13 +84,21 @@
 
                 <tr>
                     <td>503</td>
-                    <td>Karim</td>
-                    <td>Diamond</td>
                     <td>Onion</td>
-                    <td>3</td>
-                    <td>Delivered</td>
+                    <td>Diamond</td>
+                    <td>৳60/kg</td>
+                    <td>Pending</td>
                     <td>
-                        <em>No Action</em>
+                        <form method="post" style="display:inline;">
+                            <input type="hidden" name="product_id" value="503">
+                            <input type="submit" name="approve" value="Approve">
+                        </form>
+
+                        <form method="post" style="display:inline;">
+                            <input type="hidden" name="product_id" value="503">
+                            <input type="submit" name="reject" value="Reject">
+                        </form>
+                       
                     </td>
                 </tr>
 
