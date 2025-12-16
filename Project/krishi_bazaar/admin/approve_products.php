@@ -52,42 +52,38 @@
                     <th>Action</th>
                 </tr>
                 <tr>
-                    <td>101</td>
-                    <td>Rabbi</td>
-                    <td>Diamond</td>
+                    <td>501</td>
                     <td>Rice</td>
-                    <td>5</td>
-                    <td>Pending</td>
+                    <td>Diamond</td>
+                    <td>৳50/kg</td>
+                    <td>pending</td>
+                    
                     <td>
                         <form method="post" style="display:inline;">
-                            <input type="hidden" name="order_id" value="101">
-                            <input type="submit" name="confirm" value="Confirm">
+                            <input type="hidden" name="product_id" value="501">
+                            <input type="submit" name="approve" value="Approve">
                         </form>
 
                         <form method="post" style="display:inline;">
-                            <input type="hidden" name="order_id" value="101">
-                            <input type="submit" name="cancel" value="Cancel">
+                            <input type="hidden" name="product_id" value="501">
+                            <input type="submit" name="reject" value="Reject">
                         </form>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>102</td>
-                    <td>Sadia</td>
-                    <td>Rifat</td>
+                    <td>502</td>
                     <td>Potato</td>
-                    <td>10</td>
-                    <td>Confirmed</td>
+                    <td>Rifat</td>
+                    <td>৳30/kg</td>
+                    <td>Approved</td>
                     <td>
-                        <form method="post" style="display:inline;">
-                            <input type="hidden" name="order_id" value="102">
-                            <input type="submit" name="cancel" value="Cancel">
-                        </form>
+                        <em>No Acction</em>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>103</td>
+                    <td>503</td>
                     <td>Karim</td>
                     <td>Diamond</td>
                     <td>Onion</td>
