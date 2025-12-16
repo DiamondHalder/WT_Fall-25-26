@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>Apptove Products</title>
+    <title>Approve Products</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
@@ -24,7 +24,7 @@
         </div>
 
         <div class="content">
-            <h2>Apptove Products</h2><br>
+            <h2>Approve Products</h2><br>
 
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {

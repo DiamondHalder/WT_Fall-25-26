@@ -24,7 +24,7 @@
         </div>
 
         <div class="content">
-            <h2>Apptove Products</h2><br>
+            <h2>Activity</h2><br>
 
             <table>
                 <tr>
