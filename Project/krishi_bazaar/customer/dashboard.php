@@ -20,6 +20,29 @@
 
         <div class="content">
             <h2>Customer Dashboard</h2><br>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p>---</p>
+
+                </div>
+                <div class="card">
+                    <h3>Pending Orders</h3>
+                    <p>---</p>
+
+                </div>
+                <div class="card">
+                    <h3>Cart Items</h3>
+                    <p>---</p>
+
+                </div>
+                <div class="card">
+                    <h3>Wishlist</h3>
+                    <p>---</p>
+
+                </div>
+                
+            </div>
 
 
         </div>
