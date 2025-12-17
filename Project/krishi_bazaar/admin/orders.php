@@ -6,7 +6,8 @@
 <html>
     <head>
         <title>Manage Orders</title>
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <?php include("../includes/head.php"); ?>
+
     </head>
     <body>
         <?php include("../includes/header.php"); ?>

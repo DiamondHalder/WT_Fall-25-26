@@ -2,11 +2,11 @@
 
 <div class="navbar">
     <div class="nav-left">
-        <img src="../assets/images/logo.png" alt="Krishi Bazaar Logo">
+        <img src="../assets/images/plogo.png" alt="Krishi Bazaar Logo">
         <strong>Krishi Bazaar - Admin Panel</strong>
     </div>
     <div>
-        <a href="">Profile</a>
-        <a href="">Logout</a>
+        <a href="profile.php">Profile</a>
+        <a href="logout.php">Logout</a>
     </div>
 </div>

@@ -8,7 +8,8 @@
 
 <head>
     <title>Activity Log</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <?php include("../includes/head.php"); ?>
+
 </head>
 
 <body>
