@@ -1,3 +1,7 @@
+<?php
+// include("../includes/auth_check.php"); // enable later for customer
+?>
+
 <!DOCTYPE html>
 <html>
 
