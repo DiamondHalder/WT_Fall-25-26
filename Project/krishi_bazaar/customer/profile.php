@@ -23,7 +23,21 @@
 
         <div class="content">
             <h2>My Profile</h2><br>
-           
+           <?php 
+           if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $name=trim($_POST["name"]);
+            $email=trim($_POST["email"]);
+            $age=($_POST["gender"]);
+            $gender=trim($_POST["address"]);
+            $phone=trim($_POST["phone"]);
+            $address=trim($_POST["address"]);
+
+            if($name==""||$email==""||$age==""||$gender==""||$phone==""||$address==""){
+                echo "<p style='color:red;'>All fields are required.</p>";
+            }
+
+           }
+            ?>
 
 
         </div>
