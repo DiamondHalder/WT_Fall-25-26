@@ -49,42 +49,53 @@
                 <th>Action</td>
              </tr>
              <tr>
-                <td>501</td>
                 <td>Rice</td>
-                <td>5 kg</td>
+                <td>৳50</td>
+                <td>
+                    <form method="post" style="display: inline;">
+                        <input type="number" name="quantity" value="5" min="1" style="width: 60px;">
+                        <input type="submit" name="update_qty" value="update"">
+                    </form>
+                </td>
                 <td>৳250</td>
-                <td>Pending</td>
+                
                 <td>
                  <form method="post">
-                    <input type="hidden" name="order_id" value="501">
-                    <input type="submit" name="cancel_order" value="Cancel">
+                    <input type="hidden" name="product_id" value="201">
+                    <input type="submit" name="remove" value="Remove">
                  </form>
                 </td>
              </tr>
 
              <tr>
-                <td>502</td>
+                
                 <td>Potato</td>
-                <td>10 kg</td>
+                <td>৳30</td>
+                <td>
+                    <form method="post" style="display: inline;">
+                       <input type="number" name="quantity" value="10" min="1" style="width: 60px;">
+                        <input type="submit" name="update_qty" value="update""> 
+                    </form>
+                </td>
                 <td>৳300</td>
-                <td>Confirmed</td>
                 <td>
-                    <em>Processing</em>
-                </td>
-             </tr>
+                    <form method="post">
+                    <input type="hidden" name="product_id" value="202">
+                    <input type="submit" name="remove" value="Remove">
+                 </form>
 
-             <tr>
-                <td>503</td>
-                <td>Onion</td>
-                <td>3 kg</td>
-                <td>৳180</td>
-                <td>Delivered</td>
-                <td>
-                    <em>Completed</em>
                 </td>
+                
              </tr>
              
            </table>
+
+           <br><h3>Total Amount:৳500</h3><br>
+
+           <form >
+            <input type="submit" value="Proceed to Checkout" >
+            <small></small>
+           </form>
             
            
             
