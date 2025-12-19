@@ -138,16 +138,17 @@ table tr:nth-child(even & odd){
 .profile-box{
     max-width: 500px;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(6px);
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 6px rgba(5, 228, 1, 0.68);
 }
 
 .profile-form label{
     display: block;
-    margin-top: 12px;
+    margin-top: 4px;
     font-weight: bold;
     color: white;
 }
@@ -167,7 +168,19 @@ table tr:nth-child(even & odd){
     resize:none;
 }
 
+.profile-form button{
+    margin-top: 15px;
+    background: white;
+    color: rgb(2, 185, 24);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
+.profile-form button:hover{
+    background:  #d2e9dc;
+}
 .footer{
     background: green;
     color: white;

@@ -27,8 +27,8 @@
            if($_SERVER["REQUEST_METHOD"]=="POST"){
             $name=trim($_POST["name"]);
             $email=trim($_POST["email"]);
-            $age=($_POST["gender"]);
-            $gender=trim($_POST["address"]);
+            $age=($_POST["age"]);
+            $gender=trim($_POST["gender"]);
             $phone=trim($_POST["phone"]);
             $address=trim($_POST["address"]);
 
@@ -57,7 +57,7 @@
                     <option value="Female">Female</option>
                 </select>
                 <label>Phone</label>
-                <input type="text" name="Phone" value="0171111111111">
+                <input type="text" name="phone" value="0171111111111">
                 <label>Address</label>
                 <textarea name="address">Dhaka</textarea>
                 <br>
