@@ -153,6 +153,12 @@ table tr:nth-child(even & odd){
     color: white;
 }
 
+profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
 .profile-form input,
 .profile-form textarea,
 .profile-form select {
