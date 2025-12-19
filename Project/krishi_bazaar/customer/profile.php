@@ -21,7 +21,7 @@
             <a href="profile.php">Profile</a>
         </div>
 
-        <div class="content">
+        <div class="profile-box">
             <h2>My Profile</h2><br>
            <?php 
            if($_SERVER["REQUEST_METHOD"]=="POST"){

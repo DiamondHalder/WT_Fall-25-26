@@ -134,6 +134,24 @@ table tr:nth-child(even & odd){
     background: rgb(255, 255, 255);
 }
 
+
+.profile-box{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profile-form label{
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: white;
+}
+
 .footer{
     background: green;
     color: white;
