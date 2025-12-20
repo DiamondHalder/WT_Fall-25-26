@@ -44,6 +44,26 @@
             } 
              ?>
 
+             <div class="Profile-box">
+                <form method="post" enctype="multipart/form-data" class="profile-form">
+                    <label>Product Name</label>
+                    <input type="text" name="name">
+
+                    <label>Category</label>
+                    <select name="category" >
+                        <option value="">Select</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Grains">Grains</option>
+                    </select>
+
+                    <label>Price</label>
+                    <input type="number" name="price">
+
+                    
+                </form>
+             </div>
+
 
         </div>
 
