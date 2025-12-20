@@ -45,7 +45,7 @@
              ?>
 
              <div class="Profile-box">
-                <form method="post" enctype="multipart/form-data" class="profile-form">
+                <form method="post" class="profile-form">
                     <label>Product Name</label>
                     <input type="text" name="name">
 
@@ -60,7 +60,15 @@
                     <label>Price</label>
                     <input type="number" name="price">
 
-                    
+                    <label>Quantity</label>
+                    <input type="number" name="quantity">
+
+                    <label>Desciption</label>
+                    <textarea name="description" ></textarea>
+
+                    <br>
+                    <button type="submit">Add Product</button>
+
                 </form>
              </div>
 
