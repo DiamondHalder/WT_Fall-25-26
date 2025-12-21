@@ -29,12 +29,12 @@
                 
                 if(isset($_POST['delete_product'])){
                     $product_id=$_POST['product_id'];
-                    echo "<p style='color:red; '>Product Id $product_id deleted.</p>";
+                    echo "<p style='color:red; margin:8px; '>Product Id $product_id deleted.</p>";
                 }
 
                  if(isset($_POST['edit_product'])){
                     $product_id=$_POST['product_id'];
-                    echo "<p style='color:green; '>Edit request for Product Id $product_id.</p>";
+                    echo "<p style='color:green; margin:8px;'>Edit request for Product Id $product_id.</p>";
                 }
                 
             } 
@@ -56,7 +56,7 @@
                     <td>100</td>
                     <td style="color:orange;">Pending</td>
                     <td>
-                        <form method="post" style="display: inline;">
+                        <form method="get" style="display: inline;" action="edit_product.php">
                             <input type="hidden" name="product_id" value="301">
                             <input type="submit" name="edit_product" value="Edit">
                         </form>
@@ -74,7 +74,7 @@
                     <td>200</td>
                     <td style="color:green;">Approved</td>
                     <td>
-                        <form method="post" style="display: inline;">
+                        <form method="get" style="display: inline;" action="edit_product.php">
                             <input type="hidden" name="product_id" value="302">
                             <input type="submit" name="edit_product" value="Edit">
                         </form>
