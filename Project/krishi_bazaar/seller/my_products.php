@@ -40,6 +40,50 @@
             } 
              ?>
 
+            <table>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>301</td>
+                    <td>Rice</td>
+                    <td>৳50/kg</td>
+                    <td>100</td>
+                    <td style="color:orange;">Pending</td>
+                    <td>
+                        <form method="post" style="display: inline;">
+                            <input type="hidden" name="product_id" value="301">
+                            <input type="submit" name="edit_product" value="Edit">
+                        </form>
+
+                         <form method="post" style="display: inline;">
+                            <input type="hidden" name="product_id" value="301">
+                            <input type="submit" name="delete_product" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
              
 
 
