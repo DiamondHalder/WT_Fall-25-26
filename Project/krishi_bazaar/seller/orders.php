@@ -67,67 +67,38 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
+                <?php foreach($orders as $order): ?>
                 <tr>
-                    <td>501</td>
-                    <td>Rabbi</td>
-                    <td>Rice</td>
-                    <td>5</td>
-                    <td>৳250</td>
-                    <td style="color: orange;">Pending</td>
+                    <td><?= $order['order_id'] ?></td>
+                    <td><?= $order['customer'] ?></td>
+                    <td><?= $order['product'] ?></td>
+                    <td><?= $order['quantity'] ?></td>
+                    <td>৳<?= $order['total'] ?></td>
+                    <td class="status-<?= str_replace(' ','-', $order['status']) ?>">
+                        <?= ucfirst($order['status']) ?>
+                    </td>
+                    <td>
+                        <?php if($order['status']== 'buy request'): ?>
+                            <form method="post" style="display: inline;">
+                                <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
+                                <input type="submit" name="confirm" value="Confirm">
+                            </form>
+
+                            <form method="post" style="display: inline;">
+                                <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
+                                <input type="submit" name="decline" value="Decline">
+                            </form>
+                            <?php else: ?>
+                                <em>No Action</em>
+                                <?php endif; ?>
+                    </td>
+
                     
-                    <td>
-                        <form method="post" style="display: inline;">
-                            <input type="hidden" name="order_id" value="501">
-                            <input type="submit" name="accept" value="Accept">
-                        </form>
-              
-                    </td>
+                    
+                    
                 </tr>
+                <?php endforeach; ?>
 
-                <tr>
-                    <td>502</td>
-                    <td>Rajib</td>
-                    <td>Potato</td>
-                    <td>10</td>
-                    <td>৳300</td>
-                    <td>Accepted</td>
-                    <td>
-                        <form method="post" style="display: inline;">
-                            <input type="hidden" name="order_id" value="502">
-                            <input type="submit" name="ship" value="Ship">
-                        </form>
-              
-                    </td>
-                </tr>
-
-                 <tr>
-                    <td>503</td>
-                    <td>Karim</td>
-                    <td>Onion</td>
-                    <td>3</td>
-                    <td>৳180</td>
-                    <td>Shipped</td>
-                    <td>
-                        <form method="post" style="display: inline;">
-                            <input type="hidden" name="order_id" value="503">
-                            <input type="submit" name="deliver" value="Deliver">
-                        </form>
-              
-                    </td>
-                </tr>
-
-                 <tr>
-                    <td>504</td>
-                    <td>Jamal</td>
-                    <td>Rice</td>
-                    <td>2</td>
-                    <td>৳100</td>
-                    <td>Delivered</td>
-                    <td>
-                        <em>No Action</em>
-              
-                    </td>
-                </tr>
                 
             </table>
              
