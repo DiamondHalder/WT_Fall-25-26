@@ -1,3 +1,12 @@
+<?php
+$orders= [
+['order_id'=>501,'customer'=>'Rabbi','product'=>'Rice','quantity'=>5,'total'=>250,'status'=>'pending'],
+['order_id'=>502,'customer'=>'Rajib','product'=>'Potato','quantity'=>10,'total'=>300,'status'=>'buy request'],
+['order_id'=>503,'customer'=>'Karim','product'=>'Onion','quantity'=>3,'total'=>180,'status'=>'shipped'],
+['order_id'=>504,'customer'=>'Jamal','product'=>'Rice','quantity'=>2,'total'=>100,'status'=>'none']
+];
+?>
+
 
 <!DOCTYPE html>
 <html>
