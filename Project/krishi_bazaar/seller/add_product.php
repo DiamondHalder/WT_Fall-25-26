@@ -31,9 +31,8 @@
                 $category=trim($_POST["category"]);
                 $price=trim($_POST["price"]);
                 $quantity=trim($_POST["quantity"]);
-                $description=trim($_POST["description"]);
-
-                if($name=="" || $category=="" || $price=="" || $quantity=="" || $description=="" ){
+                
+                if($name=="" || $category=="" || $price=="" || $quantity=="" ){
                     echo "<p style='color:red;'>All fields are required.</p>";
                 }elseif (!is_numeric($price) || $price<=0){
                     echo "<p style='color:red;'>Enter a valid price.</p>";
@@ -45,7 +44,7 @@
             } 
              ?>
 
-             <div class="Profile-box">
+             <div class="profile-box">
                 <form method="post" class="profile-form">
                     <label>Product Name</label>
                     <input type="text" name="name">
@@ -58,14 +57,13 @@
                         <option value="Grains">Grains</option>
                     </select>
 
-                    <label>Price</label>
+                    <label>Price (per kg)</label>
                     <input type="number" name="price">
 
-                    <label>Quantity</label>
+                    <label>Quantity (kg)</label>
                     <input type="number" name="quantity">
 
-                    <label>Desciption</label>
-                    <textarea name="description" ></textarea>
+                    
 
                     <br>
                     <button type="submit">Add Product</button>

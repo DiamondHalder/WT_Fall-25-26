@@ -15,7 +15,7 @@
 
         <div class="sidebar">
             <a href="dashboard.php">Dashboard</a>
-            <a href="add_product.php"></a>
+            <a href="add_product.php">Add Product</a>
             <a href="my_products.php">My Products</a>
             <a href="orders.php">Orders</a>
             <a href="earnings.php">Seller Earnings</a>
@@ -38,11 +38,18 @@
                 <label>Product Name</label>
                 <input type="text" name="name" value="Rice">
 
-                <label>Price (<em>per kg</em>)</label>
+                <label>Category</label>
+                <select name="category">
+                    <option>Grains</option>
+                     <option>Vegetables</option>
+                <option>Fruits</option>
+                </select>
+
+                <label>Price (per kg)</label>
                 <input type="text" name="price" value="50">
 
-                <label>Stock</label>
-                <input type="number" name="stock" value="Update Product">
+                <label>Quantity (kg)</label>
+                <input type="number" name="quantity" value="100">
                 <br><br>
                 <input type="submit" value="Update Product">
             </form>

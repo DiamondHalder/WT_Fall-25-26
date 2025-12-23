@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         <div class="profile-box">
             <h2>My Profile</h2><br>
 
-            <?php if (isset($message)) echo "<div class='message'>$message</div>"; ?>
+            <?php if (isset($message)) echo "<div class='message' style='color: green;' >$message</div>"; ?>
 
             <form method="post" class="profile-form">
 
@@ -62,12 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
                         <label for="phone">Phone</label>
                         <input type="text" name="phone" value="<?= $seller['phone'] ?>">
                     </div>
-                </div>
-
-                <div class="profile-grid">
                     <div>
-
-
                         <label for="shop_name">Shop_name</label>
                         <input type="text" name="shop_name" value="<?= $seller['shop_name'] ?>">
                     </div>
@@ -81,10 +76,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
                         <input type="password" name="password" value="<?= $seller['password'] ?>">
 
                     </div>
-                    <div>
-                        <button type="submit" name="update_profile">Update Profile</button>
+
+</div>
+                    <div style="margin-top:10px;text-align:center;">
+                    <button type="submit" name="update_profile" style="width: 100%;">Update Profile</button>
                     </div>
-                </div>
+
+
             </form>
 
 

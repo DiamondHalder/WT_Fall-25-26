@@ -167,8 +167,9 @@ table tr:nth-child(even){
 .profile-form textarea,
 .profile-form select {
     width: 100%;
+    display: block;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 10px;
     border-radius: 5px;
     border: 1px solid #cdcdcd;
     background: white;
