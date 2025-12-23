@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if($order['order_id']==$order_id){
             if(isset($_POST['confirm'])){
                 $order['status']='shipped';
-                $message="Order Id $order_id confirmed and sipped.";
+                $message="Order Id $order_id confirmed and shipped.";
 
             }elseif (isset($_POST['decline'])){
                 $order['status']='none';

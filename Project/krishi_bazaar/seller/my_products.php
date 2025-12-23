@@ -45,15 +45,17 @@
                 <tr>
                     <th>Product ID</th>
                     <th>Product Name</th>
+                    <th>Category</th>
                     <th>Price</th>
-                    <th>Stock</th>
+                    <th>Quantity (kg)</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
                 <tr>
                     <td>301</td>
                     <td>Rice</td>
-                    <td>৳50/kg</td>
+                    <td>Grains</td>
+                    <td>50</td>
                     <td>100</td>
                     <td style="color:orange;">Pending</td>
                     <td>
@@ -71,7 +73,8 @@
                 <tr>
                     <td>302</td>
                     <td>Potato</td>
-                    <td>৳30/kg</td>
+                    <td>Vegetables</td>
+                    <td>30</td>
                     <td>200</td>
                     <td style="color:green;">Approved</td>
                     <td>
@@ -89,7 +92,8 @@
                 <tr>
                     <td>303</td>
                     <td>Onion</td>
-                    <td>৳60/kg</td>
+                    <td>Vegetables</td>
+                    <td>60</td>
                     <td>0</td>
                     <td style="color:red;">Rejected</td>
                     <td>
