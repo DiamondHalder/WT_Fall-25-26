@@ -1,3 +1,25 @@
+<?php
+$error="";
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $role=$_POST['role'] ?? '';
+    $email=trim($_POST['email'] ?? '');
+    $password=trim($_POST['password'] ?? '');
+
+    if($role=="" || $email=="" || $password==""){
+        $error="All fields are required.";
+    }elseif (!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $error="Invalid eamil format.";
+    }
+    else{
+        if($role === "admin"){
+            if
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
