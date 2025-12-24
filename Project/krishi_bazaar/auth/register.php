@@ -22,10 +22,29 @@
                             <option value="customer">Customer</option>
                             <option value="seller">Seller</option>
                         </select>
+
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+
+                        <label>Password</label>
+                        <input type="password" name="password" required>
+
+                        <button type="submit">Login</button>
+
+                        <p id="registerLink" style="display: none; margin-top:10px;">
+                            Don't have an accout?
+                            <a href="register.php">Register here</a>
+                        </p>
                     </form>
 
             </div>
 
         </div>
+
+        <script>
+            function toggleRegister(){
+                
+            }
+        </script>
     </body>
 </html>
