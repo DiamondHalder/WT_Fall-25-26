@@ -54,51 +54,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="profile-box_2">
         <div class="content">
-            <h2>Login</h2>
+            <h2>Seller Registration</h2>
 
             <?php if ($error): ?>
                 <p style="color:red;"><?= $error ?></p>
             <?php endif; ?>
 
+             <?php if ($success): ?>
+                <p style="color:green;"><?= $success ?></p>
+            <?php endif; ?>
+
             <form method="post" class="profile-form">
-                <label>User Type</label>
-                <select name="role" id="role" onchange="toggleRegister()" required>
-                    <option value="">Select</option>
-                    <option value="admin">Admin</option>
-                    <option value="customer">Customer</option>
-                    <option value="seller">Seller</option>
-                </select>
+                <label>Name</label>
+                <input type="text" name="name">
+                
 
                 <label>Email</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email">
+
+                <label>Phone</label>
+                <input type="text" name="phone">
+
+                <label>Shop Name</label>
+                <input type="text" name="shop">
+                
+
+                <label>Address</label>
+                <textarea name="address"></textarea>
 
                 <label>Password</label>
-                <input type="password" name="password" required>
+                <input type="password" name="password">
 
-                <button type="submit">Login</button>
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password">
 
-                <p id="registerLink" style="display: none; margin-top:10px;">
-                    Don't have an account?
-                    <a href="register.php">Register here</a>
-                </p>
+                <button type="submit">Register</button>
+
+               
             </form>
 
         </div>
 
     </div>
 
-    <script>
-        function toggleRegister() {
-            let role = document.getElementById("role").value;
-            let link = document.getElementById("registerLink");
-
-            if (role === "seller" || role === "customer") {
-                link.style.display = "block";
-            } else {
-                link.style.display = "none";
-            }
-        }
-    </script>
+    
     <?php include("../includes/footer.php"); ?>
 </body>
 
