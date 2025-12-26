@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($email === "admin@krishibazar.com" && $password === "1234") {
 
                 $_SESSION['user_role']='admin';
-                $_SESSION['admin_email']='$email';
+                $_SESSION['admin_email']=$email;
 
                 header("Location: ../admin/dashboard.php");
                 exit;
@@ -31,7 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $_SESSION['user_role']='seller';
                 $_SESSION['seller_id']=1;
-                $_SESSION['seller_email']='$email';
+                $_SESSION['seller_email']= $email;
+
+
+                setcookie("user_role", "seller", time()+ 3600, "/");
+                setcookie("user_email", $email, time()+ 3600, "/");
+                
                 header("Location: ../seller/dashboard.php");
                 exit;
             } else {
@@ -43,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $_SESSION['user_role']='customer';
                 $_SESSION['customer_id']=1;
-                $_SESSION['customer_email']='$email';
+                $_SESSION['customer_email']=$email;
                 
                 header("Location: ../seller/dashboard.php");
                 exit;

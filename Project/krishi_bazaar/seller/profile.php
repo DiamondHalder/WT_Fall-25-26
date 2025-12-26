@@ -5,7 +5,7 @@ include("../includes/header.php");
 ?>
 
 <?php
-$seller = [
+$seller = $_SESSION['seller'] ?? [
     'name' => 'Sagor',
     'email' => 'Sagor@gmail.com',
     'phone' => '123452341234',
