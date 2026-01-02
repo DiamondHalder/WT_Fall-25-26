@@ -6,7 +6,7 @@ if(session_status() === PHP_SESSION_NONE){
 
 <div class="navbar">
     <div class="nav-left">
-        <img src="../images/logo.png" alt="Krishi Bazaar Logo">
+        <img src="../images/plogo.png" alt="Krishi Bazaar Logo">
         <strong>Krishi Bazaar</strong>
     </div>
     <div>
