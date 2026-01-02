@@ -14,7 +14,7 @@
                 </div>
                 
                 <div class="input-group">
-                    <label for="password">Enter Password:</label>
+                    <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 
