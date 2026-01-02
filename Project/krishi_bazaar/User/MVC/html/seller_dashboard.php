@@ -19,7 +19,7 @@ require_once("../php/seller_auth.php");
             <a href="../php/seller_dashboard.php">Dashboard</a>
             <a href="../php/add_product.php">Add Product</a>
             <a href="../php/my_products.php">My Products</a>
-            <a href="../php/seller_orders.php">Orders</a>
+            <a href="../php/orders.php">Orders</a>
             <a href="../php/earnings.php">Seller Earnings</a>
             <a href="../php/profile.php">Profile</a>
         </div>
