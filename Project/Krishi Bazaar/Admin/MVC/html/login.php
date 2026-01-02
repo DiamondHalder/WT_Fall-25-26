@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Admin Login</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body class="login-page">
     <div class="login-container">
         <div class="login-box">
             <form action="#" method="POST">
@@ -14,7 +14,7 @@
                 </div>
                 
                 <div class="input-group">
-                    <label for="password">Password:</label>
+                    <label for="password">Enter Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 

@@ -5,7 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body { 
+body.login-page { 
     background-color: #f0f8ff;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center; */
+    text-align: center;
 }
 
 .input-group {
