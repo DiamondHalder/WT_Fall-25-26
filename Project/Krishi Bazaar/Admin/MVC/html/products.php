@@ -41,7 +41,22 @@
                         </tr>
                     </thead>
                 </table>
+                <tbody>
+                        <tr>
+                            <td>P5001</td>
+                            <td>Fresh Rice</td>
+                            <td>Green Farm</td>
+                            <td>$12.50</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <a href="#" class="action-btn">Approve</a>
+                                <a href="#" class="action-btn delete">Reject</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
     </div>
 </body>
 </html>
