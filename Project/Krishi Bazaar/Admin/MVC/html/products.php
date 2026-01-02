@@ -64,6 +64,27 @@
                                 <a href="#" class="action-btn delete">Remove</a>
                             </td>
                         </tr>
+                                                <tr>
+                            <td>P5003</td>
+                            <td>Local Tomatoes</td>
+                            <td>Farmer Akhtar</td>
+                            <td>$6.20</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <a href="#" class="action-btn">Approve</a>
+                                <a href="#" class="action-btn delete">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P5004</td>
+                            <td>Fresh Onions</td>
+                            <td>Green Farm</td>
+                            <td>$5.90</td>
+                            <td><span class="status rejected">Rejected</span></td>
+                            <td>
+                                <a href="#" class="action-btn">View</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
