@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/orders.css">
     <link rel="stylesheet" href="../css/userss.css">
+    <link rel="stylesheet" href="../css/products.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
