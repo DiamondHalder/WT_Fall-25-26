@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>Product Moderation</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/statistics.css">
+    <link rel="stylesheet" href="../css/orders.css">
+    <link rel="stylesheet" href="../css/userss.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
