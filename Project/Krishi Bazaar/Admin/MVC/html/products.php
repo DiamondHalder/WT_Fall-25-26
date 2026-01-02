@@ -24,6 +24,24 @@
                 <li><a href="activity.php">Activity Monitor</a></li>
             </ul>
         </div>
+
+            <div class="main-content">
+            <h2>Product Moderation</h2>
+            
+            <div class="simple-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Seller</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
     </div>
 </body>
 </html>
