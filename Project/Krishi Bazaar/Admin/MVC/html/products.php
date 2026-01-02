@@ -53,6 +53,17 @@
                                 <a href="#" class="action-btn delete">Reject</a>
                             </td>
                         </tr>
+                        <tr>
+                            <td>P5002</td>
+                            <td>Organic Potatoes</td>
+                            <td>Fresh Harvest</td>
+                            <td>$8.75</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td>
+                                <a href="#" class="action-btn">View</a>
+                                <a href="#" class="action-btn delete">Remove</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
