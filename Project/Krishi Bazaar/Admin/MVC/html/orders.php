@@ -3,6 +3,7 @@
 <head>
     <title>Manage Orders</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/orders.css">
 </head>
 <body class="dashboard-page">
@@ -76,10 +77,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            
-            <div class="info-box">
-                <p><strong>Total Orders Displayed:</strong> 4 orders (showing recent orders only)</p>
             </div>
         </div>
     </div>
