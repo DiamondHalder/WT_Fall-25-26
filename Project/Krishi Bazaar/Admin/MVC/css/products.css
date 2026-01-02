@@ -9,4 +9,5 @@
 .status.rejected {
     background: #f8d7da;
     color: #721c24;
+    padding: 4px 8px;
 }
