@@ -18,7 +18,7 @@
     </div>
 
     <div class="content">
-        <h2>Add New Product</h2><br>
+        <h2 align="center" >Add New Product</h2><br>
 
         <?php if($error) echo "<p style='color:red;'>$error</p>"; ?>
         <?php if($message) echo "<p style='color:green;'>$message</p>"; ?>
