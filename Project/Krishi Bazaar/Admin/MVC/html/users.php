@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/orders.css">
-    <link rel="stylesheet" href="../css/userss.css">
+    <link rel="stylesheet" href="../css/users.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -46,9 +46,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>U1001</td>
-                                <td>John Doe</td>
-                                <td>john@email.com</td>
+                                <td>1001</td>
+                                <td>Ayesha</td>
+                                <td>ayesha@gmail.com</td>
                                 <td><span class="status active">Active</span></td>
                                 <td>
                                     <a href="#" class="action-btn">Edit</a>
@@ -56,9 +56,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>U1002</td>
-                                <td>Jane Smith</td>
-                                <td>jane@email.com</td>
+                                <td>1002</td>
+                                <td>Ayesha</td>
+                                <td>ayesha@gmail.com</td>
                                 <td><span class="status active">Active</span></td>
                                 <td>
                                     <a href="#" class="action-btn">Edit</a>
@@ -87,7 +87,7 @@
                             <tr>
                                 <td>S2001</td>
                                 <td>Green Farm</td>
-                                <td>Farmer Rahman</td>
+                                <td>Rahman</td>
                                 <td><span class="status active">Active</span></td>
                                 <td>
                                     <a href="#" class="action-btn">Edit</a>
@@ -97,7 +97,7 @@
                             <tr>
                                 <td>S2002</td>
                                 <td>Fresh Harvest</td>
-                                <td>Farmer Ali</td>
+                                <td>Ali</td>
                                 <td><span class="status active">Active</span></td>
                                 <td>
                                     <a href="#" class="action-btn">Edit</a>
