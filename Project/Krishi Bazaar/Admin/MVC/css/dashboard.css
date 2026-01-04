@@ -72,12 +72,6 @@ body.dashboard-page {
     background: white;
 }
  
-.main-content h2 {
-    color: #333;
-    margin: 0 0 20px 0;
-    font-size: 20px;
-}
- 
 .cards-container {
     display: flex;
     gap: 15px;
