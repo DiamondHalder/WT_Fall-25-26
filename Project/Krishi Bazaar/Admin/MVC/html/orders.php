@@ -36,7 +36,7 @@
                         <tr>
                             <th>Order ID</th>
                             <th>Customer</th>
-                            <th>Amount</th>
+                            <th>Amount (Tk.)</th>
                             <th>Status</th>
                             <th>Date</th>
                             <th>Action</th>
@@ -46,33 +46,33 @@
                         <tr>
                             <td>#10025</td>
                             <td>Customer A</td>
-                            <td>$45.00</td>
+                            <td>450</td>
                             <td><span class="status pending">Pending</span></td>
-                            <td>2024-03-15</td>
+                            <td>15-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
                         <tr>
                             <td>#10024</td>
                             <td>Customer B</td>
-                            <td>$120.50</td>
+                            <td>120</td>
                             <td><span class="status delivered">Delivered</span></td>
-                            <td>2024-03-14</td>
+                            <td>14-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
                         <tr>
                             <td>#10023</td>
                             <td>Customer C</td>
-                            <td>$89.99</td>
+                            <td>800</td>
                             <td><span class="status confirmed">Confirmed</span></td>
-                            <td>2024-03-14</td>
+                            <td>14-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
                         <tr>
                             <td>#10022</td>
                             <td>Customer D</td>
-                            <td>$56.75</td>
+                            <td>200</td>
                             <td><span class="status cancelled">Cancelled</span></td>
-                            <td>2024-03-13</td>
+                            <td>13-03-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
                     </tbody>
