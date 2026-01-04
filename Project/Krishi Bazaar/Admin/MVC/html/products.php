@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/orders.css">
-    <link rel="stylesheet" href="../css/userss.css">
+    <link rel="stylesheet" href="../css/users.css">
     <link rel="stylesheet" href="../css/products.css">
 </head>
 <body class="dashboard-page">
@@ -29,7 +29,7 @@
             </ul>
         </div>
 
-            <div class="main-content">
+        <div class="main-content">
             <h2>Product Moderation</h2>
             
             <div class="simple-table">
@@ -39,18 +39,17 @@
                             <th>Product ID</th>
                             <th>Product Name</th>
                             <th>Seller</th>
-                            <th>Price</th>
+                            <th>Price (Tk.)</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                </table>
-                <tbody>
+                    <tbody>
                         <tr>
                             <td>P5001</td>
                             <td>Fresh Rice</td>
                             <td>Green Farm</td>
-                            <td>$12.50</td>
+                            <td>120</td>
                             <td><span class="status pending">Pending</span></td>
                             <td>
                                 <a href="#" class="action-btn">Approve</a>
@@ -61,18 +60,18 @@
                             <td>P5002</td>
                             <td>Organic Potatoes</td>
                             <td>Fresh Harvest</td>
-                            <td>$8.75</td>
+                            <td>870</td>
                             <td><span class="status approved">Approved</span></td>
                             <td>
                                 <a href="#" class="action-btn">View</a>
                                 <a href="#" class="action-btn delete">Remove</a>
                             </td>
                         </tr>
-                                                <tr>
+                        <tr>
                             <td>P5003</td>
                             <td>Local Tomatoes</td>
-                            <td>Farmer Akhtar</td>
-                            <td>$6.20</td>
+                            <td>Akhtar Khondokar</td>
+                            <td>620</td>
                             <td><span class="status pending">Pending</span></td>
                             <td>
                                 <a href="#" class="action-btn">Approve</a>
@@ -83,7 +82,7 @@
                             <td>P5004</td>
                             <td>Fresh Onions</td>
                             <td>Green Farm</td>
-                            <td>$5.90</td>
+                            <td>590</td>
                             <td><span class="status rejected">Rejected</span></td>
                             <td>
                                 <a href="#" class="action-btn">View</a>
