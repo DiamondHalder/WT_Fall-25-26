@@ -33,15 +33,23 @@
                
                 if ($operation == "add") { 
                     $result = $num1 + $num2;
+                    //clear inputs after calculation
+                $num1 = $num2 = $operation = "";
                 } elseif ($operation == "subtract") { 
                     $result = $num1 - $num2;
+                    //clear inputs after calculation
+                $num1 = $num2 = $operation = "";
                 } elseif ($operation == "multiply") { 
                     $result = $num1 * $num2;
+                    //clear inputs after calculation
+                $num1 = $num2 = $operation = "";
                 } elseif ($operation == "divide") { 
                     if ($num2 == 0) { 
                         $error = "Cannot divide by zero!"; 
                     } else {
                         $result = $num1 / $num2;
+                        //clear inputs after calculation
+                $num1 = $num2 = $operation = "";
                     }
                 }
             }
@@ -58,7 +66,7 @@
             <input type="text" name="num2" value="<?php echo $num2; ?>"><br><br> 
 
             Select Operation: <br>
-            <select name="operation"> [cite: 39]
+            <select name="operation"> 
                 <option value="add">Addition (+)</option>
                 <option value="subtract">Subtraction (-)</option>
                 <option value="multiply">Multiplication (x)</option>
@@ -82,6 +90,7 @@
                     echo "<strong>Result:</strong> " . $result;
                     echo "</div>";
                 }
+                
                 ?>
             </div>
         <?php endif; ?>

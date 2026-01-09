@@ -12,20 +12,20 @@
     <body>
 
         <?php
-        $name = ""; $nameerror = "";
-        $email = ""; $emailerror = "";
-        $subject = ""; $subjecterror = "";
-        $message = ""; $messageerror = "";
+        $name = "";     $nameerror = "";
+        $email = "";    $emailerror = "";
+        $subject = "";  $subjecterror = "";
+        $message = "";  $messageerror = "";
         $attachment_msg = "";
         $is_valid = false;
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $is_valid = true;
+            
 
             // Name validation
             if (empty($_POST["name"])) {
                 $nameerror = "Name is Required";
-                $is_valid = false;
+                
             } else {
                 $name = htmlspecialchars($_POST["name"]);
             }
@@ -33,12 +33,12 @@
             // Email validation
             if (empty($_POST["email"])) {
                 $emailerror = "Email is Required";
-                $is_valid = false;
+                
             } else {
                 $email = $_POST["email"];
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $emailerror = "Invalid email format";
-                    $is_valid = false;
+                    
                 } else {
                     $email = htmlspecialchars($email);
                 }
@@ -47,7 +47,7 @@
             // Subject validation
             if (empty($_POST["subject"])) {
                 $subjecterror = "Please select a subject";
-                $is_valid = false;
+                
             } else {
                 $subject = $_POST["subject"];
             }
@@ -55,12 +55,12 @@
             // Message validation (min 10 chars)
             if (empty($_POST["message"])) {
                 $messageerror = "Message is Required";
-                $is_valid = false;
+                
             } else {
                 $message = htmlspecialchars($_POST["message"]);
                 if (strlen($message) < 10) {
                     $messageerror = "Message must be at least 10 characters";
-                    $is_valid = false;
+                    
                 }
             }
 
@@ -69,7 +69,7 @@
                 $file_size = $_FILES["attachment"]["size"];
                 if ($file_size > 2000000) { // 2MB limit
                     $attachment_msg = "File is too large (max 2MB)";
-                    $is_valid = false;
+                   
                 } else {
                     $attachment_msg = "File uploaded: " . $_FILES["attachment"]["name"];
                 }
@@ -79,7 +79,7 @@
 
         <h2>Contact Form</h2>
 
-        <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $is_valid): ?>
+        <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
             <div class="success-box">
                 <h3 style="color:green;">Email Sent Successfully!</h3>
                 <strong>Name:</strong> <?php echo $name; ?><br>
@@ -106,9 +106,9 @@
             Subject: <br>
             <select name="subject">
                 <option value="">--Select--</option>
-                <option value="General" <?php if($subject=="General") echo "selected"; ?>>General</option>
-                <option value="Support" <?php if($subject=="Support") echo "selected"; ?>>Support</option>
-                <option value="Feedback" <?php if($subject=="Feedback") echo "selected"; ?>>Feedback</option>
+                <option value="General" >General</option>
+                <option value="Support">Support</option>
+                <option value="Feedback">Feedback</option>
             </select>
             <span class="error"><?php echo $subjecterror; ?></span><br><br>
 
@@ -116,7 +116,7 @@
             <textarea name="message" rows="4" cols="40"><?php echo $message; ?></textarea><br>
             <span class="error"><?php echo $messageerror; ?></span><br><br>
 
-            Attachment (Optional): <br>
+            Attachment: <br>
             <input type="file" name="attachment">
             <span class="error"><?php echo $attachment_msg; ?></span><br><br>
 
