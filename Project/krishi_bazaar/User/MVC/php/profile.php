@@ -1,5 +1,5 @@
 <?php
-require_once("../php/seller_auth.php");  // php folder er seller_auth include
+require_once("../php/seller_auth.php");  
 
 
 $seller = $_SESSION['seller'] ?? [
