@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 include("../db/db.php");
 
 $success = "";
@@ -8,7 +9,7 @@ $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
-    
+
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
@@ -20,13 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         $error = "All fields are required.";
     } else {
 
-       $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-
-       $sql = "INSERT INTO sellers (name, email, phone, shop_name, address, password) VALUES ('$name', '$email', '$phone', '$shop_name', '$address', '$hashPassword')";
-         if ($conn->query($sql)) {
-            $success = "Registration successful! You can now log in."; 
+        $chechSql = "SELECT seller_id FROM sellers WHERE email='$email'";
+        $checkResult = $conn->query($chechSql);
+        if ($checkResult->num_rows > 0) {
+            $error = "Email is already registered. Please use a different email.";
         } else {
-            $error = "Error: " . $conn->error;
+
+            $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO sellers (name, email, phone, shop_name, address, password) VALUES ('$name', '$email', '$phone', '$shop_name', '$address', '$hashPassword')";
+
+            if ($conn->query($sql)) {
+                $success = "Registration successful! You can now log in.";
+            } else {
+                $error = "Error: " . $conn->error;
+            }
         }
     }
 }

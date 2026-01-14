@@ -19,7 +19,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($result->num_rows ==1){
             $seller = $result->fetch_assoc();
 
-            if 
+            if (password_verify($password, $seller['password'])){
+                $_SESSION['user_role'] = "seller";
+                $_SESSION['seller_id'] = $seller['seller_id'];
+                $_SESSION['seller_email'] = $seller['email'];
+
+                setcookie("user_role", "seller", time()+ 3600, "/");
+                setcookie("user_email", $seller['email'], time()+ 3600, "/");
+
+                header("Location: ../html/seller_dashboard.php");
+                exit();
+
+            }else{
+                $error = "Incorrect Password.";
+            }
+
+            
+        }else{
+            $error="Seller not found.";
         }
 
         

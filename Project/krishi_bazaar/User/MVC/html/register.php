@@ -1,8 +1,8 @@
-<?php include("includes/header.php"); ?>
+<?php include("../html/includes/header.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include("includes/head.php"); ?>
+    <?php include("../html/includes/head.php"); ?>
 </head>
 <body>
 
@@ -11,7 +11,17 @@
     <div class="profile-box">
         <h2>Seller Registration</h2><br>
 
-        <?php if (!empty($message)) echo "<div class='message' style='color:green; margin:8px;'>$message</div>"; ?>
+        <?php if (!empty($success)): ?>
+            <div class="message" style="color:green; margin:8px; border: 1px solid green; padding: 5px;">
+                <?php echo $success; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($error)): ?>
+            <div class="message" style="color:red; margin:8px; border: 1px solid red; padding: 5px;">
+                <?php echo $error; ?>
+            </div>
+        <?php endif; ?>
 
        <form method="post" action="../php/register.php" class="profile-form">
 
@@ -62,6 +72,6 @@
 
 </div>
 
-<?php include("includes/footer.php"); ?>
+<?php include("../html/includes/footer.php"); ?>
 </body>
 </html>
