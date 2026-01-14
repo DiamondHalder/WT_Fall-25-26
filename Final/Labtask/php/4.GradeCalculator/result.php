@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-// Clear results logic 
-if (isset($_GET['clear'])) {
-    unset($_SESSION["student_results"]);
-    header("Location: results.php");
-    exit();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +18,7 @@ if (isset($_GET['clear'])) {
 </head>
 <body>
     <nav>
-        <a href="index.php">Home</a> | <a href="results.php?clear=1" class="clear-btn">Clear All Results</a>
+        <a href="index.php">Home</a>
     </nav>
 
     <h2>All Student Grade Records</h2>
