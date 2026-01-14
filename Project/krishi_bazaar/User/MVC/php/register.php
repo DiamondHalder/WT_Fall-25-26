@@ -22,10 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
        $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
-       $sql = "INSERT INTO sellers (name, email, phone, shop_name, address, password) VALUES ('$name')";
+       $sql = "INSERT INTO sellers (name, email, phone, shop_name, address, password) VALUES ('$name', '$email', '$phone', '$shop_name', '$address', '$hashPassword')";
+         if ($conn->query($sql)) {
+            $success = "Registration successful! You can now log in."; 
+        } else {
+            $error = "Error: " . $conn->error;
+        }
     }
-
-    
 }
 
 include("../html/register.php");
