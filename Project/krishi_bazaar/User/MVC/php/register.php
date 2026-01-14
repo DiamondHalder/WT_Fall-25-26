@@ -1,24 +1,31 @@
 <?php
 session_start();
 
-$message = "";
+include("../db/db.php");
+
+$success = "";
+$error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
-    //demo
-    $seller = [
-        'name'      => $_POST['name'],
-        'email'     => $_POST['email'],
-        'phone'     => $_POST['phone'],
-        'shop_name' => $_POST['shop_name'],
-        'address'   => $_POST['address'],
-        'password'  => $_POST['password'] 
-    ];
+    
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $shop_name = trim($_POST['shop_name']);
+    $address = trim($_POST['address']);
+    $password = trim($_POST['password']);
 
-   
-    $_SESSION['seller'] = $seller;
+    if (empty($name) || empty($email) || empty($phone) || empty($shop_name) || empty($address) || empty($password)) {
+        $error = "All fields are required.";
+    } else {
 
-    $message = "Registration successful. You can login now.";
+       $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+
+       $sql = "INSERT INTO sellers (name, email, phone, shop_name, address, password) VALUES ('$name')";
+    }
+
+    
 }
 
 include("../html/register.php");
