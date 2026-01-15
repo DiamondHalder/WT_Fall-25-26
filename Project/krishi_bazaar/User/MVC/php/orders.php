@@ -16,24 +16,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      if (isset($_POST['confirm'])) {
 
-          $conn->query("UPDATE cart SET status='shipped' WHERE cart_id='$cart_id' ");
-
-          $conn->query("UPDATE products SET quantity=quantity - $quantity WHERE product_id='$product_id' AND seller_id='$seller_id' ");
-
-          $priceRes = $conn->query("SELECT price FROM products WHERE product_id='$product_id' ");
+          $priceRes = $conn->query("SELECT price FROM products WHERE product_id='$product_id' AND seller_id='$seller_id' ");
 
           $priceRow = $priceRes->fetch_assoc();
-          if (!$priceRow) {
-               $error = "Price not found for product.";
-          } else {
+
+          if ($priceRow) {
+              
                $amount = $priceRow['price'] * $quantity;
+               //cart update
+               $conn->query("UPDATE cart SET status='shipped' WHERE cart_id='$cart_id' ");
+               //product quantity update
+               $conn->query("UPDATE products SET quantity = quantity - $quantity WHERE product_id='$product_id' ");
+               //insert earnings
+                $insertEarnings = $conn->query("INSERT INTO earnings (seller_id, order_id, amount) VALUES ('$seller_id', '$cart_id', '$amount') ");
+
+                if ($insertEarnings) {
+                    $message = "Order confirmed";
+                }else {
+                    $error = "Failed: " . $conn->error;
+                }
+          } else {
+                $error = "Price not found for product.";
           }
 
+          
 
-
-          $conn->query("INSERT INTO earnings (seller_id, order_id, amount) VALUES ('$seller_id', '$cart_id', '$amount') ");
-
-          $message = "Order confirmed and shipped successfully.";
+          
      }
 
      if (isset($_POST['decline'])) {

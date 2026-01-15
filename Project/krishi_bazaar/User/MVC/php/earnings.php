@@ -8,7 +8,7 @@ $error="";
 $earnings=[];
 $total_earnings = 0;
 
-$sql = "SELECT earnings_id, order_id, amount, created_at FROM earnings WHERE seller_id = '$seller_id' ORDER BY created_at DESC ";
+$sql = "SELECT earning_id, order_id, amount, created_at FROM earnings WHERE seller_id = '$seller_id' ORDER BY created_at DESC ";
 $result = $conn->query($sql);
 if ($result) {
     while ($row = $result->fetch_assoc()) {

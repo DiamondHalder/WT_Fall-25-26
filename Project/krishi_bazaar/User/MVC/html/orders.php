@@ -26,6 +26,10 @@
                 <p style="color:green; margin:8px;"><?php echo $message; ?></p>
             <?php endif; ?>
 
+            <?php if (!empty($error)): ?>
+        <p style="color:red; background: #fff5f5; padding: 10px; border: 1px solid red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+
             <table>
                 <tr>
                     <th>Cart Id</th>
@@ -60,6 +64,8 @@
 
                                     <form method="post" action="../php/orders.php" style="display: inline;">
                                         <input type="hidden" name="cart_id" value="<?= $order['cart_id'] ?>">
+                                        <input type="hidden" name="product_id" value="<?= $order['product_id'] ?>">
+
                                         <button type="submit" name="decline" style="background-color:rgba(252, 126, 126, 0.89); color: white; font-weight: bold; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Decline</button>
                                     </form>
                                 <?php else: ?>

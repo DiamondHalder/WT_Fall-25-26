@@ -19,29 +19,34 @@
 
     <div class="content">
         <h2 align="center">Seller Earnings</h2><br>
+<?php if (!empty($error)): ?>
+            <p style="color:red; margin:8px;"><?php echo $error; ?></p>
+        <?php endif; ?>
 
-        <?php if(count($orders) > 0): ?>
+        <?php if (!empty($earnings)): ?>
+
         <table>
             <tr>
+                <th>Earning Id</th>
                 <th>Order Id</th>
-                <th>Customer</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Total (৳)</th>
+                <th>Amount</th>
+                <th>Date</th>
+                
             </tr>
-            <?php foreach($orders as $e): ?>
+            <?php foreach($earnings as $e): ?>
             <tr>
-                <td><?= $e['order_id'] ?></td>
-                <td><?= $e['customer'] ?></td>
-                <td><?= $e['product'] ?></td>
-                <td><?= $e['quantity'] ?></td>
-                <td>৳<?= $e['total'] ?></td>
+                <td><?php echo htmlspecialchars($e['earning_id']); ?></td>
+                <td><?php echo htmlspecialchars($e['order_id']); ?></td>
+                <td>৳<?php echo htmlspecialchars($e['amount']); ?></td>
+                <td><?php echo htmlspecialchars($e['created_at']); ?></td>
             </tr>
             <?php endforeach; ?>
-            <tr class="total-row">
-                <td colspan="4">Total Earnings</td>
-                <td>৳<?= $total_earnings ?></td>
-            </tr>                
+
+            <tr style="font-weight:bold; background: white">
+                <td colspan="2" align="right">Total Earnings:</td>
+                <td colspan="2">৳<?php echo $total_earnings; ?></td>
+
+            </tr>             
         </table>
         <?php else: ?>
             <p>No Earnings Yet.</p>
