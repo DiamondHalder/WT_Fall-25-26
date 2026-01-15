@@ -25,7 +25,7 @@ require_once("../php/seller_auth.php");
         </div>
 
         <div class="content">
-            <h2>Seller Dashboard</h2><br>
+            <h2 align="center">Seller Dashboard</h2><br>
 
             <div class="card-container">
                 <div class="card">

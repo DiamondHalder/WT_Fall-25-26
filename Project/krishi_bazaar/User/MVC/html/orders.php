@@ -18,7 +18,7 @@
     </div>
 
     <div class="content">
-        <h2>Customer Orders</h2><br>
+        <h2 align="center">Customer Orders</h2><br>
 
         <?php if (!empty($message)): ?>
             <p style="color:green; margin:8px;"><?php echo $message; ?></p>
@@ -53,12 +53,12 @@
                                 <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
                                 <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
                                 <input type="hidden" name="quantity" value="<?php echo $order['quantity']; ?>">
-                                <button type="submit" name="confirm">Confirm</button>
+                                <button type="submit" name="confirm" style="background-color: rgb(2, 116, 2); color: white; font-weight: bold; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Confirm</button>
                             </form>
 
                             <form method="post" action="../php/orders.php" style="display: inline;">
                                 <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
-                                <button type="submit" name="decline">Decline</button>
+                                <button type="submit" name="decline" style="background-color:rgba(252, 126, 126, 0.89); color: white; font-weight: bold; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Decline</button>
                             </form>
                         <?php else: ?>
                             <em>No Action</em>

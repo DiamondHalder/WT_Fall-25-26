@@ -18,7 +18,7 @@
     </div>
 
     <div class="content">
-        <h2>Seller Earnings</h2><br>
+        <h2 align="center">Seller Earnings</h2><br>
 
         <?php if(count($orders) > 0): ?>
         <table>

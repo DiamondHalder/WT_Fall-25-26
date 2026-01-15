@@ -10,10 +10,7 @@
 body{
     background: url("../images/background.jpg") no-repeat center center fixed;
     background-size: cover;
-   
     
-    
-
 }
 
 .navbar{
@@ -23,6 +20,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 .navbar a{
@@ -59,8 +57,23 @@ body{
     
 
 }
+.sidebar{
+    width: 220px;
+    background: rgba(52, 180, 139, 0.612);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 
+
+
+.sidebar a:first-child {
+    margin-top: 50px;
+}
 .sidebar a{
+    width: 150px;
     display: block;
     text-align: center;
     background-color:rgba(17, 109, 37, 0.612) ;
@@ -68,10 +81,10 @@ body{
     padding: 10px;
     text-decoration: none;
     margin-top: 8px;
-    margin-right: 8px;
+    margin-right: 15px;
     margin-bottom: 8px;
     margin-left: 8px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .sidebar a:hover{
@@ -81,12 +94,17 @@ body{
 }
 
 .content{
+    
     flex: 1;
     padding: 20px;
     color: white;
-    
-
+ 
 }
+.content button:hover {
+    background-color: #35a02f !important; 
+    transition: 0.3s;
+}
+
 
 .card-container{
     display: grid;
@@ -139,9 +157,9 @@ table tr:nth-child(even){
     background: rgba(111, 255, 188, 0.2);
 }
 
-
+/*add product*/
 .profile-box{
-    max-width: 500px;
+    width: 45%;
     max-height: fit-content;
     margin: 0 auto;
     margin-top: 10px;
@@ -190,15 +208,17 @@ table tr:nth-child(even){
     padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
-    width: auto;
+    width: 100%;
 }
 
 .profile-form button:hover{
-    background:  #d2e9dc;
+    background-color:  #85f0b4;
+    transition: 0.3s;
+    color: white;
 }
-
+/*login form*/
 .profile-box_2 {
-    max-width: 500px;
+    width: 35%;
     max-height: fit-content;
     min-height: 465px;
     margin: 0 auto;
@@ -212,7 +232,7 @@ table tr:nth-child(even){
 }
 
 .profile-box_3{
-    max-width: 500px;
+    width: 40%;
     max-height: fit-content;
     min-height: 466px;
     margin: 0 auto;
@@ -232,4 +252,6 @@ table tr:nth-child(even){
     text-align: center;
     padding: 10px;
     margin-top: auto;
+    z-index: 5;
+    
 }

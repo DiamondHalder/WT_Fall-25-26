@@ -18,7 +18,7 @@
     </div>
 
     <div class="profile-box">
-        <h2>My Profile</h2><br>
+        <h2 align="center">My Profile</h2><br>
 
         <?php if (!empty($message)) echo "<div class='message' style='color:green; margin:8px;'>$message</div>"; ?>
 

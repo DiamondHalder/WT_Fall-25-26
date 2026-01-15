@@ -9,7 +9,7 @@
 <div class="container">
 
     <div class="profile-box">
-        <h2>Seller Registration</h2><br>
+        <h2 align="center">Seller Registration</h2><br>
 
         <?php if (!empty($success)): ?>
             <div class="message" style="color:green; margin:8px; border: 1px solid green; padding: 5px;">

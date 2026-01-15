@@ -21,7 +21,7 @@
         </div>
 
         <div class="profile-box">
-            <h2>Edit Product</h2><br>
+            <h2 align="center">Edit Product</h2><br>
 
            <?php if (!empty($error)): ?>
             <div class="message" style="color:red; margin:8px;">
