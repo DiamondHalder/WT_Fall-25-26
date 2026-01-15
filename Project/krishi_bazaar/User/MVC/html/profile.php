@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input type="password" name="password" value="<?= htmlspecialchars($seller['password'] ?? '') ?>">
+                    <input type="password" name="password" placeholder="Enter new password to update">
                 </div>
             </div>
 
