@@ -109,7 +109,8 @@ body{
 }
 
 table{
-    width: 100%;
+    width: 85%; 
+    margin: 0 auto; 
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.283);
     backdrop-filter: blur(3px);
@@ -125,16 +126,17 @@ table th{
 }
 
 table td{
+    text-align: center;
     padding: 10px;
     border: 2px solid green;
     color: rgb(0, 0, 0);
 }
 
 table tr:nth-child(odd){
-    background: rgb(255, 255, 255, 0.4);
+    background: rgba(80, 208, 255, 0.459);
 }
 table tr:nth-child(even){
-    background: rgb(255, 255, 255, 0.2);
+    background: rgba(111, 255, 188, 0.2);
 }
 
 

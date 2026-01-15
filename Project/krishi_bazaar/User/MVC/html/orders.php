@@ -26,8 +26,8 @@
 
         <table>
             <tr>
-                <th>Order Id</th>
-                <th>Customer</th>
+                <th>Cart Id</th>
+                <th>Customer Id</th>
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -40,20 +40,39 @@
 
                 <tr>
                     <td><?php echo htmlspecialchars($order['cart_id']); ?></td>
-                    <td><?php echo htmlspecialchars($order['customer_name']); ?></td>
+                    <td><?php echo htmlspecialchars($order['customer_id']); ?></td>
                     <td><?php echo htmlspecialchars($order['product_name']); ?></td>
                     <td><?php echo htmlspecialchars($order['quantity']); ?></td>
                     <td>
-                            ৳<?php echo htmlspecialchars($order['total_price']); ?>
+                            ৳<?php echo $order['price'] * $order['quantity']; ?>
                     </td>
                     <td><?php echo ucfirst($order['status']); ?></td>
                     <td>
-                        
+                        <?php if ($order['status'] === 'pending'): ?>
+                            <form method="post" action="../php/orders.php" style="display: inline;">
+                                <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
+                                <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
+                                <input type="hidden" name="quantity" value="<?php echo $order['quantity']; ?>">
+                                <button type="submit" name="confirm">Confirm</button>
+                            </form>
+
+                            <form method="post" action="../php/orders.php" style="display: inline;">
+                                <input type="hidden" name="cart_id" value="<?php echo $order['cart_id']; ?>">
+                                <button type="submit" name="decline">Decline</button>
+                            </form>
+                        <?php else: ?>
+                            <em>No Action</em>
+                        <?php endif; ?>
                     </td>
 
                 </tr>
             
             <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="7">No orders found.</td>
+                </tr>
+                 <?php endif; ?>
         </table>
 
     </div>
@@ -63,3 +82,4 @@
 <?php include("includes/footer.php"); ?>
 </body>
 </html>
+           
