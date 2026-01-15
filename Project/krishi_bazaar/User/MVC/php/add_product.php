@@ -1,5 +1,6 @@
 <?php
 require_once("seller_auth.php"); 
+include("../db/db.php");
 
 $message = "";
 $error = "";
@@ -10,15 +11,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $price = trim($_POST["price"]);
     $quantity = trim($_POST["quantity"]);
 
-    if($name=="" || $category=="" || $price=="" || $quantity==""){
+    $seller_id = $_SESSION["seller_id"] ?? null;
+
+    if(empty($seller_id)){
+        $error = "Unauthorized access.";
+    } elseif($name=="" || $category=="" || $price=="" || $quantity==""){
         $error = "All fields are required.";
     } elseif (!is_numeric($price) || $price <= 0){
         $error = "Enter a valid price.";
     } elseif (!is_numeric($quantity) || $quantity < 1){
         $error = "Enter a valid quantity.";
     } else {
-        
-        $message = "Product added successfully.";
+
+       $sql = "INSERT INTO products (seller_id, name, category, price, quantity) VALUES ('$seller_id', '$name', '$category', '$price', '$quantity')";
+         if($conn->query($sql)){
+              $message = "Product added successfully.";
+         } else {
+              $error = "Database Error: " . $conn->error;
+         }
     }
 }
 

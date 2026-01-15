@@ -24,7 +24,7 @@
         <?php if($message) echo "<p style='color:green;'>$message</p>"; ?>
 
         <div class="profile-box">
-            <form method="post" class="profile-form">
+            <form method="post" action="../php/add_product.php" class="profile-form">
                 <label>Product Name</label>
                 <input type="text" name="name">
 
