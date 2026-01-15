@@ -1,14 +1,18 @@
 <?php
 require_once("../php/seller_auth.php");
+include("../db/db.php");
 
-// Process form submission
+$error = "";
 $message = "";
-$product_id = $_GET['product_id'] ?? '';
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Normally here you will update DB
-    $message = "Product Id $product_id updated successfully.";
+$seller_id = $_SESSION['seller_id'];
+$product_id = $_GET['product_id'] ?? NULL;
+
+if (empty($product_id)){
+    die("Invalid product access.");
 }
+$sql = "SELECT * FROM products WHERE product_id = '$product_id' AND seller_id = '$seller_id'";
 
-// Redirect to html view
+
+
 include("../html/edit_products.php");
