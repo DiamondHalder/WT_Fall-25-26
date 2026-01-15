@@ -1,31 +1,28 @@
 <?php
 require_once("seller_auth.php");
+include("../db/db.php");
 
 
-$orders = [
-    ['order_id'=>501,'customer'=>'Rabbi','product'=>'Rice','quantity'=>5,'total'=>250,'status'=>'pending'],
-    ['order_id'=>502,'customer'=>'Rajib','product'=>'Potato','quantity'=>10,'total'=>300,'status'=>'buy request'],
-    ['order_id'=>503,'customer'=>'Karim','product'=>'Onion','quantity'=>3,'total'=>180,'status'=>'shipped'],
-    ['order_id'=>504,'customer'=>'Jamal','product'=>'Rice','quantity'=>2,'total'=>100,'status'=>'none']
-];
-
-
+$seller_id = $_SESSION['seller_id'];
 $message = "";
+$error="";
+
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $order_id = $_POST['order_id'];
-    foreach($orders as &$order){
-        if($order['order_id'] == $order_id){
-            if(isset($_POST['confirm'])){
-                $order['status'] = 'shipped';
-                $message = "Order Id $order_id confirmed and shipped.";
-            } elseif(isset($_POST['decline'])){
-                $order['status'] = 'none';
-                $message = "Order Id $order_id declined.";
-            }
-            break;
-        }
-    }
-    unset($order);
+
+   $cart_id = $_POST['cart_id'] ?? NULL;
+   $product_id = $_POST['product_id'] ?? NULL;
+   $quantity = $_POST['quantity'] ?? NULL;
+
+   if(isset($_POST['confirm'])) {
+
+        $conn->query("UPDATE cart SET status='shipped' WHERE cart_id='$cart_id' ");
+
+        $conn->query("UPDATE products SET quantity=quantity - $quantity WHERE product_id='$product_id' AND seller_id='$seller_id' ");
+
+        $priceRes = $conn->query("SELECT price FROM products WHERE product_id='$product_id' ");
+
+   }
 }
 
 
