@@ -1,17 +1,22 @@
 <?php
 require_once("../php/seller_auth.php");
+include("../db/db.php");
 
 
-$orders = [
-    ['order_id'=>501,'customer'=>'Rabbi','product'=>'Rice','quantity'=>5,'total'=>250,'status'=>'shipped'],
-    ['order_id'=>502,'customer'=>'Rajib','product'=>'Potato','quantity'=>10,'total'=>300,'status'=>'shipped'],
-    ['order_id'=>503,'customer'=>'Karim','product'=>'Onion','quantity'=>3,'total'=>180,'status'=>'shipped']
-];
-
-
+$seller_id = $_SESSION['seller_id'];
+$error="";
+$earnings=[];
 $total_earnings = 0;
-foreach($orders as $e){
-    $total_earnings += $e['total'];
+
+$sql = "SELECT earnings_id, order_id, amount, created_at FROM earnings WHERE seller_id = '$seller_id' ORDER BY created_at DESC ";
+$result = $conn->query($sql);
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $earnings[] = $row;
+        $total_earnings += $row['amount'];
+    }
+} else {
+    $error = "Failed to load earnings: " . $conn->error;
 }
 
 
