@@ -30,6 +30,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 $products = [];
-
+$sql = "SELECT * FROM products WHERE seller_id='$seller_id'";
+$result = $conn->query($sql);
+if($result && $result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        $products[] = $row;
+    }
+} else {
+    $error = "Database Error: " . $conn->error;
+}
 
 include("../html/my_products.php");
+
+?>
