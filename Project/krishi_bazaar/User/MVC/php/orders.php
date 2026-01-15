@@ -16,27 +16,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      if (isset($_POST['confirm'])) {
 
+
+          $cartRes = $conn->query("SELECT customer_id FROM cart WHERE cart_id='$cart_id'");
+          $cartData = $cartRes->fetch_assoc();
+          $customer_id = $cartData['customer_id'] ?? NULL;
+
           $priceRes = $conn->query("SELECT price FROM products WHERE product_id='$product_id' AND seller_id='$seller_id' ");
 
           $priceRow = $priceRes->fetch_assoc();
 
-          if ($priceRow) {
+          if ($priceRow && $customer_id) {
               
                $amount = $priceRow['price'] * $quantity;
-               //cart update
-               $conn->query("UPDATE cart SET status='shipped' WHERE cart_id='$cart_id' ");
-               //product quantity update
-               $conn->query("UPDATE products SET quantity = quantity - $quantity WHERE product_id='$product_id' ");
-               //insert earnings
-                $insertEarnings = $conn->query("INSERT INTO earnings (seller_id, order_id, amount) VALUES ('$seller_id', '$cart_id', '$amount') ");
 
-                if ($insertEarnings) {
-                    $message = "Order confirmed";
-                }else {
-                    $error = "Failed: " . $conn->error;
-                }
+               $insertOrder = $conn->query("INSERT INTO orders (customer_id, seller_id, product_id, quantity, total_price, status) 
+                                            VALUES ('$customer_id', '$seller_id', '$product_id', '$quantity', '$amount', 'confirmed')");
+               
+               if ($insertOrder) {
+                    
+                    $new_order_id = $conn->insert_id;
+
+                    
+                    $insertEarnings = $conn->query("INSERT INTO earnings (seller_id, order_id, amount) VALUES ('$seller_id', '$new_order_id', '$amount')");
+
+                    if ($insertEarnings) {
+                       
+                         $conn->query("UPDATE cart SET status='shipped' WHERE cart_id='$cart_id'");
+                         $conn->query("UPDATE products SET quantity = quantity - $quantity WHERE product_id='$product_id'");
+                         
+                         $message = "Order confirmed and moved to earnings successfully.";
+                    } else {
+                         $error = "Earnings Error: " . $conn->error;
+                    }
+               } else {
+                    $error = "Orders Table Error: " . $conn->error;
+               }
+
           } else {
-                $error = "Price not found for product.";
+               $error = "Error: Could not retrieve order or price details.";
           }
 
           
