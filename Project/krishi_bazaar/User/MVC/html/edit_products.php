@@ -23,14 +23,23 @@
         <div class="profile-box">
             <h2>Edit Product</h2><br>
 
-            <?php if (!empty($error)): ?>
-                <p style='color:green; margin:8px;'><?= $message ?></p>
-            <?php endif; ?>
+           <?php if (!empty($error)): ?>
+            <div class="message" style="color:red; margin:8px;">
+                <?= $error ?>
+            </div>
+        <?php endif; ?>
+
+         <?php if (!empty($message)): ?>
+            <div class="message" style="color:green; margin:8px;">
+                <?= $message ?>
+            </div>
+        <?php endif; ?>
+
 
             <form method="post" class="profile-form">
                 <label>Product Name</label>
-                <input type="text" name="name" value="Rice">
-
+                <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>">
+                
                 <label>Category</label>
                 <select name="category">
                     <option>Grains</option>
@@ -39,10 +48,10 @@
                 </select>
 
                 <label>Price (per kg)</label>
-                <input type="text" name="price" value="50">
+                <input type="number" name="price" value="<?php echo htmlspecialchars($product['price']); ?>">
 
                 <label>Quantity (kg)</label>
-                <input type="number" name="quantity" value="100">
+                <input type="number" name="quantity" value="<?php echo htmlspecialchars($product['quantity']); ?>">
                 <div style="margin-top:10px;text-align:center;">
                     <button type="submit" name="update_product" style="width:200px; padding:10px 0;">Update Product</button>
                 </div>
