@@ -1,25 +1,7 @@
 <?php
-$username = "";
-$error = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if (!isset($view_data)) 
 {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    
-    if (empty($username) || empty($password)) 
-    {
-        $error = "Please enter both username and password";
-    } 
-    elseif ($username == "admin" && $password == "admin123") 
-    {
-        header("Location: dashboard.php");
-        exit();
-    } 
-    else 
-    {
-        $error = "Invalid username or password";
-    }
+    $view_data = ['error' => '', 'username' => ''];
 }
 ?>
 
@@ -32,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <body class="login-page">
     <div class="login-container">
         <div class="login-box">
-            <?php if (!empty($error)): ?>
+            <?php if (!empty($view_data['error'])): ?>
                 <div style="color: red; margin-bottom: 15px; padding: 10px; background: #ffe6e6; border-radius: 5px;">
-                    <?php echo $error; ?>
+                    <?php echo $view_data['error']; ?>
                 </div>
             <?php endif; ?>
-            <form action="#" method="POST">
+            <form method="POST" action="../php/login_controller.php">
                 <div class="input-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username"  value="<?php echo htmlspecialchars($username); ?>" required>
+                    <input type="text" id="username" name="username"  value="<?php echo htmlspecialchars($view_data['username']); ?>" required>
                 </div>
                 
                 <div class="input-group">
