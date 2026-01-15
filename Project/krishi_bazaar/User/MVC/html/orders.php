@@ -20,7 +20,9 @@
     <div class="content">
         <h2>Customer Orders</h2><br>
 
-        <?php if(isset($message)) echo "<p style='color:green; margin:8px;'>$message</p>"; ?>
+        <?php if (!empty($message)): ?>
+            <p style="color:green; margin:8px;"><?php echo $message; ?></p>
+        <?php endif; ?>
 
         <table>
             <tr>
@@ -32,31 +34,25 @@
                 <th>Status</th>
                 <th>Action</th>
             </tr>
+            <?php if (!empty($orders)): ?>
+
             <?php foreach($orders as $order): ?>
-            <tr>
-                <td><?= $order['order_id'] ?></td>
-                <td><?= $order['customer'] ?></td>
-                <td><?= $order['product'] ?></td>
-                <td><?= $order['quantity'] ?></td>
-                <td>৳<?= $order['total'] ?></td>
-                <td class="status-<?= str_replace(' ','-', $order['status']) ?>">
-                    <?= ucfirst($order['status']) ?>
-                </td>
-                <td>
-                    <?php if($order['status']== 'buy request'): ?>
-                        <form method="post" style="display: inline;">
-                            <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
-                            <input type="submit" name="confirm" value="Confirm">
-                        </form>
-                        <form method="post" style="display: inline;">
-                            <input type="hidden" name="order_id" value="<?= $order['order_id'] ?>">
-                            <input type="submit" name="decline" value="Decline">
-                        </form>
-                    <?php else: ?>
-                        <em>No Action</em>
-                    <?php endif; ?>
-                </td>
-            </tr>
+
+                <tr>
+                    <td><?php echo htmlspecialchars($order['cart_id']); ?></td>
+                    <td><?php echo htmlspecialchars($order['customer_name']); ?></td>
+                    <td><?php echo htmlspecialchars($order['product_name']); ?></td>
+                    <td><?php echo htmlspecialchars($order['quantity']); ?></td>
+                    <td>
+                            ৳<?php echo htmlspecialchars($order['total_price']); ?>
+                    </td>
+                    <td><?php echo ucfirst($order['status']); ?></td>
+                    <td>
+                        
+                    </td>
+
+                </tr>
+            
             <?php endforeach; ?>
         </table>
 

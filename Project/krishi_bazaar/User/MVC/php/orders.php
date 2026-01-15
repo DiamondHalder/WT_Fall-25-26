@@ -43,7 +43,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 $sql = "SELECT c.cart_id, c.customer_id, c.quantity, c.status, p.product_id, p.name AS product_name, p.price FROM cart c JOIN products p ON c.product_id = p.product_id WHERE p.seller_id = '$seller_id' AND c.status = 'pending' ";
 
 $result = $conn->query($sql);
-
+$orders = [];
+while($row = $result->fetch_assoc()) {
+    $orders[] = $row;
+}
 
 
 include("../html/orders.php");
