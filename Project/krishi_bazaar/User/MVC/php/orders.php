@@ -22,6 +22,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         $priceRes = $conn->query("SELECT price FROM products WHERE product_id='$product_id' ");
 
+        $priceRow = $priceRes->fetch_assoc();
+        $amount = $priceRow['price'] * $quantity;
+
+        $conn->query("INSERT INTO earnings (seller_id, amount) VALUES ('$seller_id', '$amount') ");
+
+        $message = "Order confirmed and shipped successfully.";
+
+   }
+
+   if(isset($_POST['decline'])) {
+
+        $conn->query("UPDATE cart SET status='decline' WHERE cart_id='$cart_id' ");
+
+        $message = "Order canceled successfully.";
+
    }
 }
 
