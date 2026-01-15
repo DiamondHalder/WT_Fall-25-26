@@ -23,7 +23,7 @@
         <div class="profile-box">
             <h2>Edit Product</h2><br>
 
-            <?php if (!empty($message)): ?>
+            <?php if (!empty($error)): ?>
                 <p style='color:green; margin:8px;'><?= $message ?></p>
             <?php endif; ?>
 
