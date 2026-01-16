@@ -4,6 +4,13 @@ if (!isset($_SESSION))
     session_start();
 }
 $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
+
+if (!isset($data)) {
+    header("Location: ../php/login_controller.php");
+    exit();
+}
+
+$products = $data['products'];
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +19,8 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
     <title>Product Moderation</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
-    <link rel="stylesheet" href="../css/orders.css">
     <link rel="stylesheet" href="../css/users.css">
+    <link rel="stylesheet" href="../css/products.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -25,16 +32,16 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
 
     <div class="container">
         <div class="sidebar">
-    <h3>Menu</h3>
-    <ul>
-        <li><a href="../php/dashboard_controller.php">Dashboard</a></li>
-        <li><a href="../php/statistics_controller.php">Statistics</a></li>
-        <li><a href="../php/orders_controller.php">Manage Orders</a></li>
-        <li><a href="../php/users_controller.php">Manage Users & Sellers</a></li>
-        <li class="active"><a href="../php/products_controller.php">Product Moderation</a></li>
-        <li><a href="../php/activity_controller.php">Activity Monitor</a></li>
-    </ul>
-    </div>
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="../php/dashboard_controller.php">Dashboard</a></li>
+                <li><a href="../php/statistics_controller.php">Statistics</a></li>
+                <li><a href="../php/orders_controller.php">Manage Orders</a></li>
+                <li><a href="../php/users_controller.php">Manage Users & Sellers</a></li>
+                <li class="active"><a href="../php/products_controller.php">Product Moderation</a></li>
+                <li><a href="../php/activity_controller.php">Activity Monitor</a></li>
+            </ul>
+        </div>
 
         <div class="main-content">
             <h2>Product Moderation</h2>
@@ -45,38 +52,39 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                         <tr>
                             <th>Product ID</th>
                             <th>Product Name</th>
-                            <th>Seller</th>
+                            <th>Seller ID</th>
                             <th>Price (৳)</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($products as $product): ?>
-                            <tr>
-                                <td>P<?php echo $product['id']; ?></td>
-                                <td><?php echo $product['name']; ?></td>
-                                <td><?php echo $product['seller_name']; ?></td>
-                                <td><?php echo $product['price']; ?></td>
-                                <td>
-                                    <?php if ($product['status'] == 'pending'): ?>Pending
-                                    <?php elseif ($product['status'] == 'approved'): ?>Approved
-                                    <?php else: ?>Rejected
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php if ($product['status'] == 'pending'): ?>
-                                        <a href="#" class="action-btn">Approve</a>
-                                        <a href="#" class="action-btn delete">Reject</a>
-                                        <?php else: ?>
-                                            <a href="#" class="action-btn">View</a>
-                                        <?php if ($product['status'] == 'approved'): ?>
-                                            <a href="#" class="action-btn delete">Remove</a>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <?php 
+                        $count = 1;
+                        foreach ($products as $product): 
+                        ?>
+                        <tr>
+                            <td>P<?php echo $count; ?></td>
+                            <td><?php echo $product['name']; ?></td>
+                            <td>S<?php echo $product['seller_id']; ?></td>
+                            <td><?php echo $product['price']; ?></td>
+                            <td>
+                                <?php if ($product['status'] == 'pending'): ?>Pending
+                                <?php elseif ($product['status'] == 'approved'): ?>Approved
+                                <?php else: ?>Rejected
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if ($product['status'] != 'approved'): ?>
+                                    <a href="../php/products_controller.php?action=approve&id=<?php echo $product['id']; ?>" class="action-btn">Approve</a>
+                                <?php endif; ?>
+                                    <a href="../php/products_controller.php?action=remove&id=<?php echo $product['id']; ?>" class="action-btn delete">Remove</a>
+                            </td>
+                        </tr>
+                        <?php 
+                        $count++;
+                        endforeach; 
+                        ?>
                     </tbody>
                 </table>
             </div>
