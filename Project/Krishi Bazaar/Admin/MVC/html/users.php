@@ -20,8 +20,9 @@ $sellers = $data['sellers'];
     <title>Manage Users & Sellers</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
-    <link rel="stylesheet" href="../css/orders.css">
     <link rel="stylesheet" href="../css/users.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <script src="../js/confirm.js"></script>
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -75,7 +76,9 @@ $sellers = $data['sellers'];
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="../php/users_controller.php?action=block&id=<?php echo $customer['id']; ?>" class="action-btn delete">
+                                    <a href="../php/users_controller.php?action=block&id=<?php echo $customer['id']; ?>" 
+                                        class="action-btn delete"
+                                        onclick="return confirmAction('Are you sure you want to block/unblock this user?')">
                                         <?php if ($customer['status'] == 'active'): ?>Block
                                         <?php else: ?>Unblock
                                         <?php endif; ?>
