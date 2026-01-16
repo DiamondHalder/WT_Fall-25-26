@@ -65,3 +65,40 @@ body {
     gap: 25px;
     margin-top: 30px;
 }
+
+.feature {
+    background: #f1f1f1;
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+
+.how-it-works {
+    background-color: #e9f5ee;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.step {
+    background: #2e8b57;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+.cta {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #2e8b57;
+    color: white;
+}
