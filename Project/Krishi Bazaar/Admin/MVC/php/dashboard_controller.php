@@ -32,7 +32,6 @@ $data = [
     'total_orders' => $total_orders
 ];
 
-
 require_once "../html/dashboard.php";
 mysqli_close($conn);
 ?>
