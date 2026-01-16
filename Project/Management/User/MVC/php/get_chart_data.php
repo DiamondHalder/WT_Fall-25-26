@@ -5,10 +5,10 @@ include("../db/db.php");
 
 $seller_id = $_SESSION['seller_id'];
 
-$orderQuery = "SELECT o.order_id, p.name, o.total_price AS price 
-               FROM orders o 
-               JOIN products p ON o.product_id = p.product_id 
-               WHERE o.seller_id = '$seller_id'";
+$orderQuery = "SELECT order_id, amount AS price 
+               FROM earnings 
+               WHERE seller_id = '$seller_id' 
+               ORDER BY created_at DESC LIMIT 10";
 
 $orderRes = $conn->query($orderQuery);
 $orderData = [];

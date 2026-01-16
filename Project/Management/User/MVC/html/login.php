@@ -8,6 +8,7 @@ unset($_SESSION['login_error']);
 <html>
 <head>
     <?php include("includes/head.php"); ?>
+    <script src="../js/script.js" ></script>
 </head>
 <body>
 
@@ -46,13 +47,13 @@ unset($_SESSION['login_error']);
     </div>
 </div>
 
+<?php if ($error): ?>
 <script>
-    function toggleRegister() {
-        let role = document.getElementById("role").value;
-        let link = document.getElementById("registerLink");
-        link.style.display = (role === "seller" || role === "customer") ? "block" : "none";
-    }
+   window.onload = function() {
+            alert("<?php echo addslashes($error); ?>");
+        };
 </script>
+<?php endif; ?>
 
 <?php include("includes/footer.php"); ?>
 </body>

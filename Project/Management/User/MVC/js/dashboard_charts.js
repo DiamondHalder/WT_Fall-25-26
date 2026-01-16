@@ -45,9 +45,9 @@ function renderBarChart(chartData) {
     html += "<div style='display: flex; align-items: flex-end; height: " + chartHeight + "px; margin-left: 50px; border-left: 2px solid #333; border-bottom: 2px solid #333; padding: 0 10px; position:absolute; bottom:60px; left:10px; right:20px;'>";
 
     chartData.forEach(item => {
-        var height = (parseFloat(item.price) || 0) * scale;
+        var height = (parseFloat(item.amount) || 0) * scale;
         html += `<div style="margin: 0 10px; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
-                    <div style="background-color: #4caf50; width: 30px; height: ${height}px;" title="${item.order_id}: ${item.price}"></div>
+                    <div style="background-color: #4caf50; width: 30px; height: ${height}px;" title="${item.order_id}: ${item.amount}"></div>
                     <div style="position: absolute; color:black; bottom: -25px; font-size: 10px; font-weight:bold; white-space: nowrap;">${item.order_id}</div>
                  </div>`;
     });

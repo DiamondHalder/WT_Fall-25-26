@@ -18,11 +18,11 @@ include("includes/header.php");
         
         <div class="hero-buttons">
             <?php if (isset($_SESSION['seller_id'])): ?>
-                <a href="seller_dashboard.php" class="btn primary">Go to Dashboard</a>
+                <a href="../php/seller_dashboard.php" class="btn primary">Go to Dashboard</a>
             <?php else: ?>
-                <a href="login.php" class="btn primary">Login</a>
+                <a href="../html/login.php" class="btn primary">Login</a>
             <?php endif; ?>
-            <a href="register.php" class="btn secondary">Register</a>
+            <a href="../html/register.php" class="btn secondary">Register</a>
         </div>
     </div>
 </section>

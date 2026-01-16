@@ -45,8 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
+if ($error != "") {
 $_SESSION['login_error'] = $error;
 header("Location: ../html/login.php");
 exit();
+}
 ?>
