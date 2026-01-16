@@ -1,14 +1,15 @@
 <?php
+error_reporting(0);
 require_once("seller_auth.php");
 include("../db/db.php");
 
 $seller_id = $_SESSION['seller_id'];
-// Orders Bar
-$orderQuery = "SELECT p.name, SUM(o.total_price) as total_income 
+
+$orderQuery = "SELECT o.order_id, p.name, o.total_price AS price 
                FROM orders o 
                JOIN products p ON o.product_id = p.product_id 
-               WHERE o.seller_id = '$seller_id' 
-               GROUP BY p.product_id";
+               WHERE o.seller_id = '$seller_id'";
+
 $orderRes = $conn->query($orderQuery);
 $orderData = [];
 while($row = $orderRes->fetch_assoc()){

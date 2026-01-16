@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="card" style="background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 20px; border-radius: 8px;">
-                    <h3 >Pending Orders</h3>
+                    <h3>Pending Orders</h3>
                     <p style="font-size: 24px; color: #ff9800; font-weight: bold;"><?php echo $pendingOrders; ?></p>
                 </div>
 
@@ -40,19 +40,31 @@
                 </div>
             </div>
 
-            <div align="center"  style="margin-top: 30px;">
-                
+            <div align="center" style="margin-top: 30px;">
+                <button type="button" onclick="loadCharts()">Refresh to show charts</button>
             </div>
-        </div>
 
+            <div class="analytics-row">
+                <div class="graph-box">
+                    <h3>Orders Income </h3>
+                    <div id="barChartContainer"></div>
+                </div>
+                <div class="graph-box">
+                    <h3>Product Prices</h3>
+                    <div id="lineGraphContainer"></div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="../js/dashboard_charts.js"></script>
 
-    <?php include("includes/footer.php"); ?>
+        <script src="../js/dashboard_charts.js"></script>
+
+        <?php include("includes/footer.php"); ?>
 
 </body>
+
 </html>
