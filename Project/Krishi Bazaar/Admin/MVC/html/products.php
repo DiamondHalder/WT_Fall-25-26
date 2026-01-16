@@ -1,11 +1,9 @@
 <?php
-
-if (!isset($data)) {
-    header("Location: ../php/login_controller.php");
-    exit();
+if (!isset($_SESSION)) 
+{
+    session_start();
 }
-
-$products = $data['products'];
+$admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +14,6 @@ $products = $data['products'];
     <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/orders.css">
     <link rel="stylesheet" href="../css/users.css">
-    <link rel="stylesheet" href="../css/products.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -62,12 +59,9 @@ $products = $data['products'];
                                 <td><?php echo $product['seller_name']; ?></td>
                                 <td><?php echo $product['price']; ?></td>
                                 <td>
-                                    <?php if ($product['status'] == 'pending'): ?>
-                                        <span class="status pending">Pending</span>
-                                    <?php elseif ($product['status'] == 'approved'): ?>
-                                        <span class="status approved">Approved</span>
-                                    <?php else: ?>
-                                        <span class="status rejected">Rejected</span>
+                                    <?php if ($product['status'] == 'pending'): ?>Pending
+                                    <?php elseif ($product['status'] == 'approved'): ?>Approved
+                                    <?php else: ?>Rejected
                                     <?php endif; ?>
                                 </td>
                                 <td>
