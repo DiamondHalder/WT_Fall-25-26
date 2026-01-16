@@ -24,6 +24,11 @@ $result3 = mysqli_query($conn, $sql3);
 $row3 = mysqli_fetch_assoc($result3);
 $total_products = $row3['count'];
 
+$sql4 = "SELECT COUNT(*) as count FROM orders";
+$result4 = mysqli_query($conn, $sql4);
+$row4 = mysqli_fetch_assoc($result4);
+$total_orders = $row4['count'];
+
 $data = [
     'admin_name' => $admin_name,
     'total_users' => $total_users,
