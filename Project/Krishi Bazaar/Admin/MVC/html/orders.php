@@ -4,6 +4,14 @@ if (!isset($_SESSION))
     session_start();
 }
 $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
+
+if (!isset($data)) 
+{
+    header("Location: ../php/login_controller.php");
+    exit();
+}
+
+$orders = $data['orders'];
 ?>
 
 <!DOCTYPE html>
@@ -51,38 +59,22 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($orders as $order): ?>
                         <tr>
-                            <td>#10025</td>
-                            <td>Customer A</td>
-                            <td>450</td>
-                            <td>Pending</td>
-                            <td>15-02-2025</td>
+                            <td><?php echo $order['order_id']; ?></td>
+                            <td><?php echo $order['customer_name']; ?></td>
+                            <td><?php echo $order['amount']; ?></td>
+                            <td>
+                                <?php if ($order['status'] == 'pending'): ?>Pending
+                                <?php elseif ($order['status'] == 'confirmed'): ?>Confirmed
+                                <?php elseif ($order['status'] == 'delivered'): ?>Delivered
+                                <?php else: ?>Cancelled
+                                <?php endif; ?>
+                            </td>
+                            <td><?php echo $order['order_date']; ?></td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
-                        <tr>
-                            <td>#10024</td>
-                            <td>Customer B</td>
-                            <td>120</td>
-                            <td>Delivered</td>
-                            <td>14-02-2025</td>
-                            <td><a href="#" class="action-btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>#10023</td>
-                            <td>Customer C</td>
-                            <td>800</td>
-                            <td>Confirmed</td>
-                            <td>14-02-2025</td>
-                            <td><a href="#" class="action-btn">View</a></td>
-                        </tr>
-                        <tr>
-                            <td>#10022</td>
-                            <td>Customer D</td>
-                            <td>200</td>
-                            <td>Cancelled</td>
-                            <td>13-03-2025</td>
-                            <td><a href="#" class="action-btn">View</a></td>
-                        </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
