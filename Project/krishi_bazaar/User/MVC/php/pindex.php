@@ -8,5 +8,5 @@ if (isset($_SESSION['seller_id'])) {
     exit();
 }
 
-
+include("../html/hindex.php");
 ?>
