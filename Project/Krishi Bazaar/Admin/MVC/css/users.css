@@ -9,11 +9,8 @@
     padding-bottom: 8px;
 }
 
-.action-btn.delete {
-    background: #e74c3c;
-    margin-left: 5px;
-}
 
-.action-btn.delete:hover {
-    background: #c0392b;
+.status.blocked {
+    color: white;
+    background: #e74c3c;
 }
