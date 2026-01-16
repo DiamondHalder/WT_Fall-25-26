@@ -4,6 +4,12 @@ if (!isset($_SESSION))
     session_start();
 }
 $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
+
+if (!isset($data)) 
+{
+    header("Location: ../php/login_controller.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,27 +55,27 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                     <tbody>
                         <tr>
                             <td>Active Users</td>
-                            <td>890</td>
+                            <td><?php echo $data['active_users']; ?></td>
                             <td>Today</td>
                         </tr>
                         <tr>
                             <td>Active Sellers</td>
-                            <td>210</td>
+                            <td><?php echo $data['active_sellers']; ?></td>
                             <td>Today</td>
                         </tr>
                         <tr>
                             <td>Products Listed</td>
-                            <td>1,450</td>
+                            <td><?php echo $data['total_products']; ?></td>
                             <td>Yesterday</td>
                         </tr>
                         <tr>
                             <td>Pending Orders</td>
-                            <td>45</td>
+                            <td><?php echo $data['pending_orders']; ?></td>
                             <td>Today</td>
                         </tr>
                         <tr>
                             <td>Completed Orders</td>
-                            <td>8,895</td>
+                            <td><?php echo $data['completed_orders']; ?></td>
                             <td>This Month</td>
                         </tr>
                     </tbody>
