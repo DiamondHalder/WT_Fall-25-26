@@ -9,15 +9,6 @@
     padding-bottom: 8px;
 }
 
-.status.active {
-    background: #d4edda;
-    color: #155724;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
 .action-btn.delete {
     background: #e74c3c;
     margin-left: 5px;
