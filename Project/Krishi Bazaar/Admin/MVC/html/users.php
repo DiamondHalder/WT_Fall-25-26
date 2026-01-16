@@ -3,6 +3,15 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
+
+if (!isset($data)) 
+{
+    header("Location: ../php/login_controller.php");
+    exit();
+}
+
+$customers = $data['customers'];
+$sellers = $data['sellers'];
 ?>
 
 <!DOCTYPE html>
@@ -52,26 +61,28 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $count = 1;
+                            foreach ($customers as $customer): 
+                            ?>
                             <tr>
-                                <td>1001</td>
-                                <td>Ayesha</td>
-                                <td>ayesha@gmail.com</td>
-                                <td>Active</td>
+                                <td>U<?php echo $count; $count++; ?></td>
+                                <td><?php echo $customer['username']; ?></td>
+                                <td><?php echo $customer['email']; ?></td>
                                 <td>
-                                    <a href="#" class="action-btn">Edit</a>
-                                    <a href="#" class="action-btn delete">Block</a>
+                                    <?php if ($customer['status'] == 'active'): ?>Active
+                                    <?php else: ?>Blocked
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="../php/users_controller.php?action=block&id=<?php echo $customer['id']; ?>" class="action-btn delete">
+                                        <?php if ($customer['status'] == 'active'): ?>Block
+                                        <?php else: ?>Unblock
+                                        <?php endif; ?>
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td>Ayesha</td>
-                                <td>ayesha@gmail.com</td>
-                                <td>Active</td>
-                                <td>
-                                    <a href="#" class="action-btn">Edit</a>
-                                    <a href="#" class="action-btn delete">Block</a>
-                                </td>
-                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -91,26 +102,28 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            $count = 1;
+                            foreach ($sellers as $seller): 
+                            ?>
                             <tr>
-                                <td>S2001</td>
-                                <td>Green Farm</td>
-                                <td>Rahman</td>
-                                <td>Active</td>
+                                <td>S<?php echo $count; $count++; ?></td>
+                                <td><?php echo $seller['shop_name']; ?></td>
+                                <td><?php echo $seller['owner_name']; ?></td>
                                 <td>
-                                    <a href="#" class="action-btn">Edit</a>
-                                    <a href="#" class="action-btn delete">Block</a>
+                                    <?php if ($seller['status'] == 'active'): ?>Active
+                                    <?php else: ?>Blocked
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="../php/users_controller.php?action=block&id=<?php echo $seller['id']; ?>" class="action-btn delete">
+                                        <?php if ($seller['status'] == 'active'): ?>Block
+                                        <?php else: ?>Unblock
+                                        <?php endif; ?>
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>S2002</td>
-                                <td>Fresh Harvest</td>
-                                <td>Ali</td>
-                                <td>Active</td>
-                                <td>
-                                    <a href="#" class="action-btn">Edit</a>
-                                    <a href="#" class="action-btn delete">Block</a>
-                                </td>
-                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
