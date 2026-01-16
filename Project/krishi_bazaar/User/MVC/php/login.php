@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("user_role", "seller", time()+ 3600, "/");
                 setcookie("user_email", $seller['email'], time()+ 3600, "/");
 
-                header("Location: ../html/seller_dashboard.php");
+                header("Location: ../php/seller_dashboard.php");
                 exit();
 
             }else{

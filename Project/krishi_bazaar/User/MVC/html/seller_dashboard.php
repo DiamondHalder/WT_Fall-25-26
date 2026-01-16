@@ -1,3 +1,4 @@
+
 <?php 
 //require_once("../php/seller_auth.php");
 ?>
@@ -46,6 +47,11 @@
         </div>
 
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/dashboard_charts.js"></script>
 
     <?php include("includes/footer.php"); ?>
 

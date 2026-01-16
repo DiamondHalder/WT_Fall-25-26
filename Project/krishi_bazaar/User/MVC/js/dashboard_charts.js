@@ -1,5 +1,4 @@
-var myPieChart= null;
-var myBarChart= null;
+
 
 function loadCharts(){
     var xhttp = new XMLHttpRequest();
@@ -7,11 +6,9 @@ function loadCharts(){
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
 
-            document.getElementById("pieStatus").style.display = "none";
-            document.getElementById("barStatus").style.display = "none";
-
-            renderPieChart(data.pieChartData);
-            renderBarChart(data.barChartData);
+            renderBarChart(data.orderStats);
+            
+            renderLineGraph(data.productInfo);
         }
     };
     xhttp.open("GET", "../php/get_chart_data.php", true);
@@ -19,18 +16,16 @@ function loadCharts(){
 }
 
 function renderPieChart(ChartData) {
-    var labels = ChartData.map(item => item.name);
-    var values = ChartData.map(item => item.total_value);
-    var ctx = document.getElementById('pieChartCanvas').getContext('2d');
-
-    if (myPieChart) {
-        myPieChart.destroy();
-    }
-
-    myPieChart = new Chart(ctx, {
-        type: 'pie',
-        data: { labels: labels,datasets: [{ data: values, backgroundColor:['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'] }] }
-        });
+    var html = "<div style='display: flex; align-items: flex-end; height: 200px; border-left: 2px solid #333; border-bottom: 2px solid #333; padding: 10px;'>";
+    chartData.forEach(item => {
+        var height = (item.total_income / 5000) * 150; // Scaling
+        html += `<div style="margin: 0 10px; text-align: center;">
+                    <div style="background-color: #4caf50; width: 35px; height: ${height}px;" title="Income: ${item.total_income}"></div>
+                    <div style="font-size: 10px; width: 35px; overflow: hidden;">${item.name}</div>
+                 </div>`;
+    });
+    html += "</div>";
+    document.getElementById("barChartContainer").innerHTML = html;
 
 }
 
