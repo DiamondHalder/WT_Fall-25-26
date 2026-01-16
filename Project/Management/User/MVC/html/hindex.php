@@ -11,16 +11,21 @@ include("includes/header.php");
 </head>
 
 <body>
-    <section class="hero">
+   <section class="hero">
+    <div class="hero-content">
         <h1>Welcome to Krishi Bazaar</h1>
         <p>Your trusted digital marketplace for fresh agricultural products</p>
+        
         <div class="hero-buttons">
-            <a href="../php/login.php" class="btn primary">Login</a>
-            <a href="../php/register.php" class="btn secondary">Register</a>
+            <?php if (isset($_SESSION['seller_id'])): ?>
+                <a href="seller_dashboard.php" class="btn primary">Go to Dashboard</a>
+            <?php else: ?>
+                <a href="login.php" class="btn primary">Login</a>
+            <?php endif; ?>
+            <a href="register.php" class="btn secondary">Register</a>
         </div>
-        </div>
-    </section>
-
+    </div>
+</section>
 
     <section class="features">
         <h2>Why Choose Krishi Bazaar?</h2>
@@ -29,18 +34,7 @@ include("includes/header.php");
                 <h3>Direct from Farmers</h3>
                 <p>Buy fresh products directly from verified sellers.</p>
             </div>
-            <div class="feature">
-                <h3>Fair Pricing</h3>
-                <p>No middlemen, transparent and fair prices.</p>
             </div>
-
-            <div class="feature">
-                <h3>Secure Transactions</h3>
-                <p>Safe and reliable order processing system.</p>
-            </div>
-
-        </div>
-
     </section>
 
     <section class="how-it-works">
