@@ -1,6 +1,6 @@
 <?php
-
-if (!isset($_SESSION)) {
+if (!isset($_SESSION))
+{
     session_start();
 }
 $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin";
@@ -44,7 +44,7 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                         <tr>
                             <th>Order ID</th>
                             <th>Customer</th>
-                            <th>Amount (Tk.)</th>
+                            <th>Amount (৳)</th>
                             <th>Status</th>
                             <th>Date</th>
                             <th>Action</th>
@@ -55,7 +55,7 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             <td>#10025</td>
                             <td>Customer A</td>
                             <td>450</td>
-                            <td><span class="status pending">Pending</span></td>
+                            <td>Pending</td>
                             <td>15-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
@@ -63,7 +63,7 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             <td>#10024</td>
                             <td>Customer B</td>
                             <td>120</td>
-                            <td><span class="status delivered">Delivered</span></td>
+                            <td>Delivered</td>
                             <td>14-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
@@ -71,7 +71,7 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             <td>#10023</td>
                             <td>Customer C</td>
                             <td>800</td>
-                            <td><span class="status confirmed">Confirmed</span></td>
+                            <td>Confirmed</td>
                             <td>14-02-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
@@ -79,7 +79,7 @@ $admin_name = isset($_SESSION["admin_name"]) ? $_SESSION["admin_name"] : "Admin"
                             <td>#10022</td>
                             <td>Customer D</td>
                             <td>200</td>
-                            <td><span class="status cancelled">Cancelled</span></td>
+                            <td>Cancelled</td>
                             <td>13-03-2025</td>
                             <td><a href="#" class="action-btn">View</a></td>
                         </tr>
