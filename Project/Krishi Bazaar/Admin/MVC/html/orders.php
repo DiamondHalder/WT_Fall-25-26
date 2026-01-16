@@ -20,7 +20,6 @@ $orders = $data['orders'];
     <title>Manage Orders</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
-    <link rel="stylesheet" href="../css/orders.css">
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -55,7 +54,6 @@ $orders = $data['orders'];
                             <th>Amount (৳)</th>
                             <th>Status</th>
                             <th>Date</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,7 +70,6 @@ $orders = $data['orders'];
                                 <?php endif; ?>
                             </td>
                             <td><?php echo $order['order_date']; ?></td>
-                            <td><a href="#" class="action-btn">View</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
