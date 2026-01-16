@@ -1,0 +1,20 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.primary {
+    background-color: #2e8b57;
+    color: #fff;
+}
