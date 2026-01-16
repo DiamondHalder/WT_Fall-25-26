@@ -29,19 +29,29 @@ function renderPieChart(ChartData) {
 
 }
 
-function renderBarChart(ChartData) {
-    var labels = ChartData.map(item => item.name);
-    var values = ChartData.map(item => item.price);
-    var ctx = document.getElementById('barChartCanvas').getContext('2d');
+function renderLineGraph(chartData) {
+    var svgWidth = 400;
+    var svgHeight = 200;
+    var padding = 40;   
+    var points="";
+    var xGap = (svgWidth - 2 * padding) / (chartData.length - 1 || 1);
 
-    if (myBarChart) {
-        myBarChart.destroy();
-    }
-
-    myBarChart = new Chart(ctx, {
-        type: 'bar',
-        data: { labels: labels, datasets: [{ data: values, backgroundColor: '#4caf50' }] },
-        options: { scales: { y: { beginAtZero: true } } }
-
+    chartData.forEach((item, index) => {
+        var x = padding + (index * xGap);
+        var y = svgHeight - padding - (item.price / 2000) * (svgHeight - 2 * padding);
+        points += x + "," + y + " ";
     });
+
+    var svgHTML = `<svg width="${svgWidth}" height="${svgHeight}" style="background: #fdfdfd; border: 1px solid #ddd;">
+        <line x1="${padding}" y1="${svgHeight-padding}" x2="${svgWidth-10}" y2="${svgHeight-padding}" stroke="#333" stroke-width="2"/>
+        <line x1="${padding}" y1="10" x2="${padding}" y2="${svgHeight-padding}" stroke="#333" stroke-width="2"/>
+        <polyline fill="none" stroke="#2196f3" stroke-width="3" points="${points}" />
+        ${chartData.map((item, index) => {
+            var x = padding + (index * xGap);
+            var y = svgHeight - padding - (item.price / 2000) * (svgHeight - 2 * padding);
+            return `<circle cx="${x}" cy="${y}" r="5" fill="#f44336"><title>${item.name}: ${item.price}</title></circle>`;
+        }).join('')}
+    </svg>`;
+
+    document.getElementById("lineGraphContainer").innerHTML = svgHTML;
 }

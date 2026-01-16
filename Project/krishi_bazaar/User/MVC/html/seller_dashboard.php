@@ -1,8 +1,3 @@
-
-<?php 
-//require_once("../php/seller_auth.php");
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -43,6 +38,10 @@
                     <h3>Total Sales</h3>
                     <p style="font-size: 24px; color: #4caf50; font-weight: bold;">৳<?php echo number_format($totalSales, 2); ?></p>
                 </div>
+            </div>
+
+            <div align="center"  style="margin-top: 30px;">
+                
             </div>
         </div>
 

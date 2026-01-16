@@ -3,31 +3,29 @@ require_once("seller_auth.php");
 include("../db/db.php");
 
 $seller_id = $_SESSION['seller_id'];
-//pie
-$pieQuery = $conn->query("SELECT p.name, SUM(o.total_price) AS total_value
-                          FROM orders o
-                          JOIN products p ON o.product_id = p.product_id
-                          WHERE o.seller_id='$seller_id'
-                          GROUP BY p.product_id");
-                          
-$pieRes=$conn->query($pieQuery);
-$pieData = [];
-
-while ($row = $pieRes->fetch_assoc()) {
-    $pieData[] = $row;
+// Orders Bar
+$orderQuery = "SELECT p.name, SUM(o.total_price) as total_income 
+               FROM orders o 
+               JOIN products p ON o.product_id = p.product_id 
+               WHERE o.seller_id = '$seller_id' 
+               GROUP BY p.product_id";
+$orderRes = $conn->query($orderQuery);
+$orderData = [];
+while($row = $orderRes->fetch_assoc()){
+    $orderData[] = $row;
 }
 
-//bar
-$barQuery = $conn->query("SELECT name, price FROM products WHERE seller_id='$seller_id'");
-$barRes = $conn->query($barQuery);
-$barData = [];
-while ($row = $barRes->fetch_assoc()) {
-    $barData[] = $row;
+// Product Line Graph
+$productQuery = "SELECT name, price FROM products WHERE seller_id = '$seller_id' LIMIT 10";
+$productRes = $conn->query($productQuery);
+$productData = [];
+while($row = $productRes->fetch_assoc()){
+    $productData[] = $row;
 }
 
-$response=[
-    'pieChart' => $pieData,
-    'barChart' => $barData
+$response = [
+    "orderStats" => $orderData,
+    "productInfo" => $productData
 ];
 
 header('Content-Type: application/json');
