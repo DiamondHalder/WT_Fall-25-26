@@ -1,4 +1,9 @@
 function loadCharts() {
+
+    document.getElementById("orderBox").style.display = "block";
+    document.getElementById("productBox").style.display = "block";
+
+    
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

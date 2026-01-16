@@ -45,11 +45,11 @@
             </div>
 
             <div class="analytics-row">
-                <div class="graph-box">
+                <div class="graph-box" id="orderBox" style="display: none;">
                     <h3>Orders Income </h3>
                     <div id="barChartContainer"></div>
                 </div>
-                <div class="graph-box">
+                <div class="graph-box" id="productBox" style="display: none;">
                     <h3>Product Prices</h3>
                     <div id="lineGraphContainer"></div>
                 </div>
