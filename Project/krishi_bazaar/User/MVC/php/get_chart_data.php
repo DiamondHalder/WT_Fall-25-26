@@ -13,7 +13,7 @@ $pieQuery = $conn->query("SELECT p.name, SUM(o.total_price) AS total_value
 $pieRes=$conn->query($pieQuery);
 $pieData = [];
 
-while ($row = $pieQuery->fetch_assoc()) {
+while ($row = $pieRes->fetch_assoc()) {
     $pieData[] = $row;
 }
 
@@ -21,3 +21,15 @@ while ($row = $pieQuery->fetch_assoc()) {
 $barQuery = $conn->query("SELECT name, price FROM products WHERE seller_id='$seller_id'");
 $barRes = $conn->query($barQuery);
 $barData = [];
+while ($row = $barRes->fetch_assoc()) {
+    $barData[] = $row;
+}
+
+$response=[
+    'pieChart' => $pieData,
+    'barChart' => $barData
+];
+
+header('Content-Type: application/json');
+echo json_encode($response);
+?>
