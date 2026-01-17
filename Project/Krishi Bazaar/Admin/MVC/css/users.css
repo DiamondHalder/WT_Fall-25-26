@@ -8,9 +8,3 @@
     border-bottom: 2px solid #eee;
     padding-bottom: 8px;
 }
-
-
-.status.blocked {
-    color: white;
-    background: #e74c3c;
-}
