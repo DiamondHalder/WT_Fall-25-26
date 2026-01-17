@@ -10,6 +10,7 @@ if (!isset($data))
 <head>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/confirm.js"></script>
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -33,6 +34,13 @@ if (!isset($data))
         </div>
  
         <div class="main-content">
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px;">
+                <button onclick="loadServerTime()" style="background: #3498db; color: white; padding: 8px 15px; border: none; border-radius: 4px;">
+                    Server Time
+                </button>
+                <p id="serverTime" style="margin-top: 10px;"></p>
+            </div>
+            <br>
             <div class="cards-container">
                 
                 <div class="card">
