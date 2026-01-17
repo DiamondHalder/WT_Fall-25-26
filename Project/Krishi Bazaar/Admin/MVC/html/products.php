@@ -21,6 +21,7 @@ $products = $data['products'];
     <link rel="stylesheet" href="../css/statistics.css">
     <link rel="stylesheet" href="../css/users.css">
     <link rel="stylesheet" href="../css/products.css">
+    <script src="../js/confirm.js"></script>
 </head>
 <body class="dashboard-page">
     <div class="header">
@@ -78,7 +79,9 @@ $products = $data['products'];
                                 <?php if ($product['status'] != 'approved'): ?>
                                     <a href="../php/products_controller.php?action=approve&id=<?php echo $product['id']; ?>" class="action-btn">Approve</a>
                                 <?php endif; ?>
-                                    <a href="../php/products_controller.php?action=remove&id=<?php echo $product['id']; ?>" class="action-btn delete">Remove</a>
+                                    <a href="../php/products_controller.php?action=remove&id=<?php echo $product['id']; ?>" 
+                                    class="action-btn delete"
+                                    onclick="return confirmAction('Are you sure you want to remove this product?')">Remove</a>
                             </td>
                         </tr>
                         <?php 
