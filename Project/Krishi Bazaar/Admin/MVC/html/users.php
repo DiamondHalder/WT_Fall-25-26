@@ -119,7 +119,9 @@ $sellers = $data['sellers'];
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="../php/users_controller.php?action=block&id=<?php echo $seller['id']; ?>" class="action-btn delete">
+                                    <a href="../php/users_controller.php?action=block&id=<?php echo $seller['id']; ?>" 
+                                    class="action-btn delete"
+                                    onclick="return confirmAction('Are you sure you want to block/unblock this user?')">
                                         <?php if ($seller['status'] == 'active'): ?>Block
                                         <?php else: ?>Unblock
                                         <?php endif; ?>
