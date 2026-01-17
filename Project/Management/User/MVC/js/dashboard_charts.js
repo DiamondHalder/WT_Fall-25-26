@@ -21,7 +21,7 @@ var html = "";
 function renderBarChart(chartData) {
     if (!chartData || chartData.length === 0) return;
 
-    var maxIncome = Math.max(...chartData.map(item => parseFloat(item.price) || 0));
+    var maxIncome = Math.max(...chartData.map(item => parseFloat(item.amount) || 0));
     
     var chartHeight = 180; 
     var scale = maxIncome > 0 ? chartHeight / maxIncome : 1;
@@ -47,7 +47,7 @@ function renderBarChart(chartData) {
     chartData.forEach(item => {
         var height = (parseFloat(item.amount) || 0) * scale;
         html += `<div style="margin: 0 10px; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
-                    <div style="background-color: #4caf50; width: 30px; height: ${height}px;" title="${item.order_id}: ${item.amount}"></div>
+                    <div style="background-color: #61fff2; width: 30px; height: ${height}px;" title="${item.order_id}: ${item.amount}"></div>
                     <div style="position: absolute; color:black; bottom: -25px; font-size: 10px; font-weight:bold; white-space: nowrap;">${item.order_id}</div>
                  </div>`;
     });
@@ -96,13 +96,13 @@ function renderLineGraph(chartData) {
         
         <text x="${svgWidth / 2}" y="${svgHeight - 10}" font-weight="bold" font-size="12" text-anchor="middle">Product Name (from Products Table)</text>
 
-        <polyline fill="none" stroke="#2196f3" stroke-width="3" points="${points}" />
+        <polyline fill="none" stroke="#2145fa" stroke-width="3" points="${points}" />
         
         ${chartData.map((item, index) => {
         var x = padding + (index * xGap);
         var y = svgHeight - padding - (item.price * scale);
         return `
-                <circle cx="${x}" cy="${y}" r="5" fill="#f44336"><title>${item.name}: ${item.price}</title></circle>
+                <circle cx="${x}" cy="${y}" r="2" fill="#f44336"><title>${item.name}: ${item.price}</title></circle>
                 <text x="${x}" y="${svgHeight - padding + 15}" font-size="9" text-anchor="middle" transform="rotate(20, ${x}, ${svgHeight - padding + 15})">${item.name}</text>
             `;
     }).join('')}

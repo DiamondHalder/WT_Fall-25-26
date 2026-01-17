@@ -5,7 +5,7 @@ include("../db/db.php");
 
 $seller_id = $_SESSION['seller_id'];
 
-$orderQuery = "SELECT order_id, amount AS price 
+$orderQuery = "SELECT order_id, amount  
                FROM earnings 
                WHERE seller_id = '$seller_id' 
                ORDER BY created_at DESC LIMIT 10";
