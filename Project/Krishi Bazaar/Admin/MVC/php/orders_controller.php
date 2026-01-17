@@ -2,7 +2,6 @@
 require_once "session_check.php";
 include "../db/config.php";
 
-
 $sql = "SELECT * FROM orders ORDER BY order_date DESC";
 $result = mysqli_query($conn, $sql);
 
