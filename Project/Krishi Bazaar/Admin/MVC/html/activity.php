@@ -19,7 +19,6 @@ $activities = $data['activities'];
     <title>Activity Monitor</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/statistics.css">
-    <script src="../js/confirm.js"></script>
 </head>
 <body class="dashboard-page">
     <div class="header">
