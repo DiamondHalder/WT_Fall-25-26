@@ -2,13 +2,16 @@
 require_once "session_check.php";
 include "../db/config.php";
 
-// Handle button clicks
-if (isset($_GET['action']) && isset($_GET['id'])) {
+if (isset($_GET['action']) && isset($_GET['id'])) 
+{
     $id = $_GET['id'];
     
-    if ($_GET['action'] == 'approve') {
+    if ($_GET['action'] == 'approve') 
+    {
         $sql = "UPDATE products SET status = 'approved' WHERE id = $id";
-    } elseif ($_GET['action'] == 'remove') {
+    } 
+    elseif ($_GET['action'] == 'remove') 
+    {
         $sql = "DELETE FROM products WHERE id = $id";
     }
     
@@ -17,12 +20,12 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     exit();
 }
 
-// Get all products
 $sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
 $products = [];
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) 
+{
     $products[] = $row;
 }
 
